@@ -21,17 +21,16 @@ public class MainActivity extends AppCompatActivity {
 
         CustomAdapter adapter = new CustomAdapter(getSupportFragmentManager(), getApplicationContext());
 
+        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        tabLayout.addTab(tabLayout.newTab().setText("Today"));
+        tabLayout.addTab(tabLayout.newTab().setText("Calendar"));
+        tabLayout.addTab(tabLayout.newTab().setText("Profile"));
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
         viewPager = (ViewPager) findViewById(R.id.viewPager);
         viewPager.setAdapter(adapter);
 
-        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
-        tabLayout.setupWithViewPager(viewPager);
-
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-
-        viewPager.setCurrentItem(0, false);
-
-        tabLayout.setTabsFromPagerAdapter(adapter);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -78,24 +77,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public int getCount() {
             return 3;
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            String title=" ";
-            switch (position){
-                case 0:
-                    title="Today";
-                    break;
-                case 1:
-                    title="Calendar";
-                    break;
-                case 2:
-                    title="Profile";
-                    break;
-            }
-
-            return title;
         }
     }
 }

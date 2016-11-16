@@ -18,10 +18,9 @@ tools:context="cs188.drakeactivities.MainActivity">
     />
 
 <android.support.v4.view.ViewPager
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     android:id="@+id/viewPager"
-    android:layout_alignParentTop="true"
-    android:layout_alignParentEnd="true"
-    android:layout_marginEnd="10dp" />
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/tabLayout"/>
+
 </RelativeLayout>
