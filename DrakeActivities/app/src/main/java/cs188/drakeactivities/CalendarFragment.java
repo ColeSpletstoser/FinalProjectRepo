@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 /**
  * Created by Spletz on 11/15/16.
@@ -17,6 +18,8 @@ public class CalendarFragment extends Fragment {
         View layout = inflater.inflate(R.layout.calendar_fragment, container, false);
 
         //do work here
+
+        TextView txtView = (TextView) layout.findViewById(R.id.calendarfrag);
 
         return layout;
     }
