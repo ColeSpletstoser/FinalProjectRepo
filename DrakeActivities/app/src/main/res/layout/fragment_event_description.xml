@@ -30,6 +30,13 @@
                 android:background="@color/colorPrimaryDark"
                 android:orientation="horizontal">
 
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="?android:attr/floatingToolbarItemBackgroundBorderlessDrawable"
+                    android:id="@+id/imageView"
+                    android:layout_weight="1" />
+
                 <TextView
                     android:text="Event Description"
                     android:layout_width="wrap_content"
