@@ -31,7 +31,7 @@ public class TodayFragment extends Fragment {
                 Fragment fragment = new EventDescription();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.frameLayout, fragment);
+                fragmentTransaction.replace(R.id.fragmentFrameLayout, fragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
