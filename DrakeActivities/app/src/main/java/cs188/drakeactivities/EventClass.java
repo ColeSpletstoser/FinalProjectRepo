@@ -74,8 +74,8 @@ public class EventClass
 
     public int getParticipantCount() { return participantCount; }
 
-    public void setParticipantCount(int count) {
-        this.participantCount = count;
+    public void setParticipantCount() {
+        this.participantCount = participantCount + 1;
     }
 
 
