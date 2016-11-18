@@ -33,7 +33,6 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="?android:attr/floatingToolbarItemBackgroundBorderlessDrawable"
                     android:id="@+id/imageView"
                     android:layout_weight="1" />
 
@@ -43,6 +42,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/eventdescription"
                     android:layout_weight="1" />
+
             </LinearLayout>
 
             <LinearLayout
