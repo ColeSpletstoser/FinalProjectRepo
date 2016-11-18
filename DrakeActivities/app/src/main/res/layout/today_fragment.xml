@@ -3,4 +3,9 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:text="Go to Event Description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/testButton" />
 </LinearLayout>
