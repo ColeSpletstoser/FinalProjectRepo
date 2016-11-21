@@ -5,21 +5,27 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
-
     private ViewPager viewPager;
     private TabLayout tabLayout;
+    public CustomAdapter adapter;
+    public FragmentManager mFragmentManager;
+
+    Fragment switchable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        CustomAdapter adapter = new CustomAdapter(getSupportFragmentManager(), getApplicationContext());
+        adapter = new CustomAdapter(getSupportFragmentManager(), getApplicationContext());
 
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         tabLayout.addTab(tabLayout.newTab().setText("Today"));
@@ -45,14 +51,26 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
-
+                if (tab.getPosition() == 0 && (switchable instanceof EventDescription))
+                {
+                    switchable = null;
+                    adapter.notifyDataSetChanged();
+                }
             }
         });
     }
 
-    private class CustomAdapter extends FragmentPagerAdapter{
+    public void switchFragments() {
+        mFragmentManager.beginTransaction().remove(switchable).commit();
+        switchable = new EventDescription();
+        adapter.notifyDataSetChanged();
+    }
+
+    private class CustomAdapter extends FragmentStatePagerAdapter {
+
         public CustomAdapter(FragmentManager supportFragmentManager, Context applicationContext) {
             super(supportFragmentManager);
+            mFragmentManager = supportFragmentManager;
         }
 
         public boolean userHasAccount = true;
@@ -61,7 +79,11 @@ public class MainActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position){
                 case 0:
-                    return new TodayFragment();
+                    if (switchable == null)
+                    {
+                        switchable = new TodayFragment();
+                    }
+                    return switchable;
                 case 1:
                     return new CalendarFragment();
                 case 2:
@@ -75,8 +97,15 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
+        public int getItemPosition(Object object) {
+            return POSITION_NONE;
+        }
+
+        @Override
         public int getCount() {
             return 3;
         }
     }
+
+
 }

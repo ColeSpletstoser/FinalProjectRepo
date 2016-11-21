@@ -28,12 +28,7 @@ public class TodayFragment extends Fragment {
         testButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment = new EventDescription();
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentFrameLayout, fragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+                ((MainActivity)getActivity()).switchFragments();
             }
         });
 
