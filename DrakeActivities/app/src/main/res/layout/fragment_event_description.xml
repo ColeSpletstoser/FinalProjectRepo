@@ -41,15 +41,17 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/eventdescription"
                     android:layout_weight="1" />
-
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/viewB"
                 android:layout_width="match_parent"
-                android:layout_height="341dp"
+                android:layout_height="68dp"
                 android:background="@android:color/background_light"
-                android:orientation="horizontal"/>
+                android:orientation="horizontal"
+                android:layout_weight="0.54">
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -60,7 +62,11 @@
             android:layout_margin="16dp"
             android:clickable="true"
             app:layout_anchor="@id/viewA"
-            app:layout_anchorGravity="bottom|right|end"/>
+            app:layout_anchorGravity="bottom|right|end"
+            app:backgroundTint="@android:color/holo_orange_light" />
 
     </android.support.design.widget.CoordinatorLayout>
+
 </FrameLayout>
+
+
