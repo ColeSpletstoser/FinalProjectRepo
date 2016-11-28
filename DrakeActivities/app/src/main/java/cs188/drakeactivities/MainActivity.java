@@ -55,11 +55,21 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        mFragmentManager.addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {
+            public void onBackStackChanged()
+            {
+//              no clue what it wants here
+                switchable = null;
+                adapter.notifyDataSetChanged();
+            }
+        });
+
     }
 
     public void switchFragments()
     {
-        mFragmentManager.beginTransaction().remove(switchable).add(switchable).addToBackStack().commit();
+        mFragmentManager.beginTransaction().remove(switchable).add(switchable, "fragment").addToBackStack().commit();
         switchable = new EventDescription();
         adapter.notifyDataSetChanged();
     }
