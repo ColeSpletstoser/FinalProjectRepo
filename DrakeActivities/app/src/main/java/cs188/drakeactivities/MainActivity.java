@@ -4,13 +4,10 @@ import android.content.Context;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
@@ -81,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 case 0:
                     if (switchable == null)
                     {
-                        switchable = new TodayFragment();
+                        switchable = new DayFragment();
                     }
                     return switchable;
                 case 1:

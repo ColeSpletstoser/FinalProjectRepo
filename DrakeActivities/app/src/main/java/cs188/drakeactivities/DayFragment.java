@@ -14,7 +14,7 @@ import android.widget.Button;
 /**
  * Created by Spletz on 11/15/16.
  */
-public class TodayFragment extends Fragment {
+public class DayFragment extends Fragment {
 
     private Button testButton;
 
