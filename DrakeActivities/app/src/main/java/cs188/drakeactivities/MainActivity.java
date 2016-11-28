@@ -57,8 +57,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void switchFragments() {
-        mFragmentManager.beginTransaction().remove(switchable).commit();
+    public void switchFragments()
+    {
+        mFragmentManager.beginTransaction().remove(switchable).add(switchable).addToBackStack().commit();
         switchable = new EventDescription();
         adapter.notifyDataSetChanged();
     }
@@ -102,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
         public int getCount() {
             return 3;
         }
+
     }
 
 
