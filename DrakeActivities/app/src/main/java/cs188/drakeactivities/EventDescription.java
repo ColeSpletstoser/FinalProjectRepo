@@ -25,9 +25,9 @@ public class EventDescription extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO: have button bring up three other buttons (ask clayton), save to phone, app, or both calendars
+                //TODO: have button bring up 2 more buttons, save to phone, app, or both calendars
                 //Intent in = new Intent(getActivity(), .class);
-                // startActivity(in);
+                //startActivity(in);
             }
         });
 
