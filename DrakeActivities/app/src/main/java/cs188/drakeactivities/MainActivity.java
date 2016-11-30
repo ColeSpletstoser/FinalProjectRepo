@@ -56,22 +56,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mFragmentManager.addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {
-            public void onBackStackChanged()
-            {
-//              no clue what it wants here
-                switchable = null;
-                adapter.notifyDataSetChanged();
-            }
-        });
-
     }
 
     public void switchFragments()
     {
-        mFragmentManager.beginTransaction().remove(switchable).add(switchable, "fragment").addToBackStack().commit();
+        mFragmentManager.beginTransaction().remove(switchable).commit();
+//        add(switchable, "fragment").addToBackStack()
         switchable = new EventDescription();
         adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        if (switchable instanceof  EventDescription)
+        {
+            switchable = null;
+            adapter.notifyDataSetChanged();
+        }
     }
 
     private class CustomAdapter extends FragmentStatePagerAdapter {

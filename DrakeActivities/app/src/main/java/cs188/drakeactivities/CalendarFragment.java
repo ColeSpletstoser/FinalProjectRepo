@@ -3,6 +3,7 @@ package cs188.drakeactivities;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,8 @@ import android.widget.CalendarView;
  * Created by Spletz on 11/15/16.
  */
 public class CalendarFragment extends Fragment {
+
+    public FragmentManager fragmentManager;
 
     private CalendarView calendarView;
 
@@ -29,6 +32,14 @@ public class CalendarFragment extends Fragment {
             }
         });
 
+        fragmentManager.addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {
+            public void onBackStackChanged()
+            {
+//              no clue what it wants here
+                switchable = null;
+                adapter.notifyDataSetChanged();
+            }
+        });
 
         return layout;
     }
