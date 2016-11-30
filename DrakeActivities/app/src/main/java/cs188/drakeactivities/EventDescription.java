@@ -25,11 +25,12 @@ public class EventDescription extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 //TODO ask Clayton about saving to calendars, bringing up login screen
-                //Intent in = new Intent(getActivity(), .class);
-                //startActivity(in);
             }
         });
+
+
 
         return layout;
     }
