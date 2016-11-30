@@ -22,7 +22,12 @@ public class CalendarFragment extends Fragment {
 
         calendarView = (CalendarView) layout.findViewById(R.id.calendarView);
 
-//        setOnDateChangeListener
+        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
+                ((MainActivity)getActivity()).switchFragments();
+            }
+        });
 
 
         return layout;
