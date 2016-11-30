@@ -64,16 +64,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void calendarFragments() {
-        FragmentTransaction ft = mFragmentManager.beginTransaction();
-
-//        ft.replace(R.id.fragment_container, fragmentB, tag);
-
-//        ft.addToBackStack(null);
-//
-        ft.commit();
-    }
-
     @Override
     public void onBackPressed() {
         // Catch back action and pops from backstack
