@@ -21,11 +21,13 @@ public class EventDescription extends Fragment {
         View v =  inflater.inflate(R.layout.fragment_event_description, container, false);
 
         FloatingActionButton fab = (FloatingActionButton) v.findViewById(R.id.fab);
+       final FloatingActionButton cal = (FloatingActionButton) v.findViewById(R.id.saveCal);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO: have button bring up 2 more buttons, save to phone, app, or both calendars
+                cal.setVisibility(View.VISIBLE);
+                //TODO ask Clayton about saving to calendars, bringing up login screen
                 //Intent in = new Intent(getActivity(), .class);
                 //startActivity(in);
             }

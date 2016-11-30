@@ -27,7 +27,8 @@
                 android:layout_height="0dp"
                 android:layout_weight="0.4"
                 android:background="@color/colorPrimaryDark"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="visible">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -71,7 +72,10 @@
             android:layout_margin="16dp"
             app:layout_anchor="@id/dummy"
             app:layout_anchorGravity="top|right|end"
-            app:srcCompat="@android:drawable/ic_menu_my_calendar" />
+            app:srcCompat="@android:drawable/ic_menu_my_calendar"
+            app:backgroundTint="?android:attr/searchWidgetCorpusItemBackground"
+            android:contentDescription="Save to your calendar"
+            android:visibility="gone" />
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab"
