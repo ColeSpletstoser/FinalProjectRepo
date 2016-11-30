@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        switchable = new FirstFragment();
+
         adapter = new CustomAdapter(getSupportFragmentManager(), getApplicationContext());
 
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager = (ViewPager) findViewById(R.id.viewPager);
         viewPager.setAdapter(adapter);
+        viewPager.setOffscreenPageLimit(2);
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
@@ -51,19 +54,35 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
-                if (tab.getPosition() == 0 && (switchable instanceof EventDescription))
+                if (tab.getPosition() == 0)
                 {
-                    switchable = null;
-                    adapter.notifyDataSetChanged();
+                    if (mFragmentManager.getBackStackEntryCount() > 0){
+                        mFragmentManager.popBackStack();
+                    }
                 }
             }
         });
     }
 
-    public void switchFragments() {
-        mFragmentManager.beginTransaction().remove(switchable).commit();
-        switchable = new EventDescription();
-        adapter.notifyDataSetChanged();
+    public void calendarFragments() {
+        FragmentTransaction ft = mFragmentManager.beginTransaction();
+
+//        ft.replace(R.id.fragment_container, fragmentB, tag);
+
+//        ft.addToBackStack(null);
+//
+        ft.commit();
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Catch back action and pops from backstack
+        // (if you called previously to addToBackStack() in your transaction)
+        if (mFragmentManager.getBackStackEntryCount() > 0){
+            mFragmentManager.popBackStack();
+        }
+        // Default action on back pressed
+        else super.onBackPressed();
     }
 
     private class CustomAdapter extends FragmentStatePagerAdapter {
@@ -79,11 +98,7 @@ public class MainActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position){
                 case 0:
-                    if (switchable == null)
-                    {
-                        switchable = new TodayFragment();
-                    }
-                    return switchable;
+                    return new FirstFragment();
                 case 1:
                     return new CalendarFragment();
                 case 2:
