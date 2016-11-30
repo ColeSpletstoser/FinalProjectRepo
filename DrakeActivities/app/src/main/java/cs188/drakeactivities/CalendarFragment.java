@@ -28,18 +28,18 @@ public class CalendarFragment extends Fragment {
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
-                ((MainActivity)getActivity()).switchFragments();
+                ((MainActivity)getActivity()).switchFragments1();
             }
         });
 
-        fragmentManager.addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {
-            public void onBackStackChanged()
-            {
-//              no clue what it wants here
-                switchable = null;
-                adapter.notifyDataSetChanged();
-            }
-        });
+//        fragmentManager.addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {
+//            public void onBackStackChanged()
+//            {
+////              no clue what it wants here
+////                switchable = null;
+////                adapter.notifyDataSetChanged();
+//            }
+//        });
 
         return layout;
     }

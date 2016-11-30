@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     public FragmentManager mFragmentManager;
 
     Fragment switchable;
+    Fragment switchable1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,9 +55,13 @@ public class MainActivity extends AppCompatActivity {
                     switchable = null;
                     adapter.notifyDataSetChanged();
                 }
+                if (tab.getPosition() == 1 && (switchable instanceof DayFragment))
+                {
+                    switchable1 = null;
+                    adapter.notifyDataSetChanged();
+                }
             }
         });
-
     }
 
     public void switchFragments()
@@ -66,13 +72,28 @@ public class MainActivity extends AppCompatActivity {
         adapter.notifyDataSetChanged();
     }
 
+    public void switchFragments1()
+    {
+
+        Log.v("something", "it works");
+        switchable1 = new DayFragment();
+        mFragmentManager.beginTransaction().add(switchable1, "fragment").addToBackStack(null).commit();
+//                .remove(switchable1).commit();
+//
+        adapter.notifyDataSetChanged();
+    }
+
+
+
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         if (switchable instanceof  EventDescription)
         {
             switchable = null;
             adapter.notifyDataSetChanged();
+        }
+        else{
+            super.onBackPressed();
         }
     }
 
@@ -95,7 +116,11 @@ public class MainActivity extends AppCompatActivity {
                     }
                     return switchable;
                 case 1:
-                    return new CalendarFragment();
+                    if (switchable1 == null)
+                    {
+                        switchable1 = new CalendarFragment();
+                    }
+                    return switchable1;
                 case 2:
                     if(userHasAccount) //change to check for if the user has an account
                         return new ProfileFragment();
