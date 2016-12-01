@@ -12,11 +12,11 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FirstFragment extends Fragment {
+public class SecondFragment extends Fragment {
 
     private Fragment fragment;
 
-    public FirstFragment() {
+    public SecondFragment() {
     }
 
     @Override
@@ -25,7 +25,7 @@ public class FirstFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_first, container, false);
         FragmentTransaction transaction = getFragmentManager()
                 .beginTransaction();
-        transaction.replace(R.id.holder, new TodayFragment());
+        transaction.replace(R.id.holder, new CalendarFragment());
         transaction.commit();
         return view;
     }
