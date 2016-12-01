@@ -25,7 +25,7 @@ public class FirstFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_first, container, false);
         FragmentTransaction transaction = getFragmentManager()
                 .beginTransaction();
-        transaction.replace(R.id.holder, new TodayFragment());
+        transaction.replace(R.id.holder, new DayFragment());
         transaction.commit();
         return view;
     }
