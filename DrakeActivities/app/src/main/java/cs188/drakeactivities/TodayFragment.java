@@ -7,32 +7,35 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CalendarView;
+import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * Created by Spletz on 11/15/16.
  */
-public class CalendarFragment extends Fragment {
+public class TodayFragment extends Fragment {
 
-    private CalendarView calendarView;
+    private Button testButton;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View layout = inflater.inflate(R.layout.calendar_fragment, container, false);
+        View layout = inflater.inflate(R.layout.today_fragment, container, false);
 
-        calendarView = (CalendarView) layout.findViewById(R.id.calendarView);
+        testButton = (Button) layout.findViewById(R.id.testButton);
 
-        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+        testButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
+            public void onClick(View v) {
                 FragmentTransaction trans = getFragmentManager()
-                        .beginTransaction();
-                trans.replace(R.id.holder1, new DayFragment());
+                                .beginTransaction();
+                trans.replace(R.id.holder, new EventDescription());
                 trans.addToBackStack(null);
                 trans.commit();
             }
         });
+
+        TextView txtView = (TextView) layout.findViewById(R.id.todayfrag);
 
         return layout;
     }

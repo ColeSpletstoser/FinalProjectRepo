@@ -3,13 +3,12 @@ package cs188.drakeactivities;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * Created by Spletz on 11/15/16.
@@ -30,7 +29,7 @@ public class DayFragment extends Fragment {
             public void onClick(View v) {
                 FragmentTransaction trans = getFragmentManager()
                                 .beginTransaction();
-                trans.replace(R.id.holder, new EventDescription());
+                trans.replace(R.id.holder1, new EventDescription());
                 trans.addToBackStack(null);
                 trans.commit();
             }

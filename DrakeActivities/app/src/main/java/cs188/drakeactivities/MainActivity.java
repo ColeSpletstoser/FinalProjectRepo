@@ -57,6 +57,12 @@ public class MainActivity extends AppCompatActivity {
                         mFragmentManager.popBackStack();
                     }
                 }
+                else if (tab.getPosition() == 1)
+                {
+                    if (mFragmentManager.getBackStackEntryCount() > 0){
+                        mFragmentManager.popBackStack();
+                    }
+                }
             }
         });
     }
