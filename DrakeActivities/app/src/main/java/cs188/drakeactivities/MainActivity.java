@@ -46,18 +46,18 @@ public class MainActivity extends AppCompatActivity {
         EventClass proj6 = new EventClass();
         EventClass proj7 = new EventClass();
 
-        proj1.setEventTitle("");
-        proj1.setOrganizationUsername("");
-        proj1.setEventTime("");
-        proj1.setEventDay(14);
+        proj1.setEventTitle("Drake MBB vs Iona University");
+        proj1.setOrganizationUsername("Drake Athletics");
+        proj1.setEventTime("2:05 pm");
+        proj1.setEventDay(29);
         proj1.setEventMonth(12);
-        proj1.setEventYear(3000);
-        proj1.setEventDescription("I've been to the year 3000, not much has changed, but they live underwater");
-        proj1.setEventCode("JonasBRos");
+        proj1.setEventYear(2016);
+        proj1.setEventDescription("Come to the Knapp and support the Drake Men’s Basketball as they take on Iona!");
+        proj1.setEventCode("SportsGoSports");
 
-        proj2.setEventTitle("");
-        proj2.setOrganizationUsername("");
-        proj2.setEventTime("");
+        proj2.setEventTitle("Snowman building contest");
+        proj2.setOrganizationUsername("SAB");
+        proj2.setEventTime("1:00-3:00 pm");
         proj2.setEventDay(15);
         proj2.setEventMonth(12);
         proj2.setEventYear(2016);
