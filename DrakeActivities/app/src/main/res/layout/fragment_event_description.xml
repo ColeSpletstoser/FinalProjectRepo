@@ -25,7 +25,7 @@
                 android:id="@+id/viewA"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.4"
+                android:layout_weight="0.36"
                 android:background="@color/colorPrimaryDark"
                 android:orientation="horizontal">
 
@@ -35,23 +35,57 @@
                     android:id="@+id/imageView"
                     android:layout_weight="1" />
 
-                <TextView
-                    android:text="Event Description"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/eventdescription"
-                    android:layout_weight="1" />
-
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/viewB"
                 android:layout_width="match_parent"
-                android:layout_height="341dp"
+                android:layout_height="82dp"
                 android:background="@android:color/background_light"
-                android:orientation="horizontal"/>
+                android:orientation="horizontal">
+
+                <TextView
+                    android:text="Event Description Sample Text"
+                    android:layout_width="325dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/EventTitle"
+                    android:textColor="@android:color/black"
+                    android:textSize="25sp"
+                    android:textStyle="normal|bold" />
+            </LinearLayout>
+            <TextView
+                android:text="Sample Description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/Description"
+                android:layout_weight="0.48"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" />
+
+            <EditText
+                android:layout_width="168dp"
+                android:layout_height="wrap_content"
+                android:inputType="textCapCharacters"
+                android:text="Enter Code Here"
+                android:ems="10"
+                android:id="@+id/eventCode"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:background="@android:color/darker_gray" />
+
+            <Button
+                android:text="ENTER"
+                android:layout_width="174dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/enterCode"
+                android:layout_marginLeft="25dp"
+                android:background="@android:color/holo_orange_light" />
+
 
         </LinearLayout>
+
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab"
@@ -60,7 +94,8 @@
             android:layout_margin="16dp"
             android:clickable="true"
             app:layout_anchor="@id/viewA"
-            app:layout_anchorGravity="bottom|right|end"/>
+            app:layout_anchorGravity="bottom|right|end"
+            app:backgroundTint="@android:color/holo_orange_light" />
 
     </android.support.design.widget.CoordinatorLayout>
 </FrameLayout>
