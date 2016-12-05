@@ -35,8 +35,6 @@ public class TodayFragment extends Fragment {
             }
         });
 
-        TextView txtView = (TextView) layout.findViewById(R.id.todayfrag);
-
         return layout;
     }
 }

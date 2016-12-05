@@ -28,7 +28,16 @@ public class CalendarFragment extends Fragment {
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
                 FragmentTransaction trans = getFragmentManager()
                         .beginTransaction();
-                trans.replace(R.id.holder1, new DayFragment());
+
+                Fragment dayFragment = new DayFragment();
+
+                Bundle args = new Bundle();
+                args.putInt("eventYear", year);
+                args.putInt("eventMonth", month);
+                args.putInt("eventDay", dayOfMonth);
+                dayFragment.setArguments(args);
+
+                trans.replace(R.id.holder1, dayFragment);
                 trans.addToBackStack(null);
                 trans.commit();
             }

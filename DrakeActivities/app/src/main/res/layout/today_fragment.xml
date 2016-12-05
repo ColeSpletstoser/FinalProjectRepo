@@ -3,14 +3,21 @@
     android:id="@+id/fragmentFrameLayout"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:text="Today Fragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/todayfrag" />
+
+
+
     <Button
         android:text="Go to Event Description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:id="@+id/testButton" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:id="@+id/dayTextView" />
+
+
 </FrameLayout>

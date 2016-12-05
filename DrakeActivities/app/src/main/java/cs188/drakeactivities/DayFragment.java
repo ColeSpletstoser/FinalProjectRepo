@@ -10,17 +10,32 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 /**
  * Created by Spletz on 11/15/16.
  */
 public class DayFragment extends Fragment {
 
     private Button testButton;
+    private TextView dayTextView;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View layout = inflater.inflate(R.layout.today_fragment, container, false);
+
+        dayTextView = (TextView) layout.findViewById(R.id.dayTextView);
+
+        int eventYear = getArguments().getInt("eventYear", 0);
+        int eventDay = getArguments().getInt("eventDay", 0);
+        int eventMonth = getArguments().getInt("eventMonth", 0);
+
+        dayTextView.append(String.valueOf(eventDay));
+        dayTextView.append(" ");
+        dayTextView.append(String.valueOf(eventMonth));
+        dayTextView.append(" ");
+        dayTextView.append(String.valueOf(eventYear));
 
         testButton = (Button) layout.findViewById(R.id.testButton);
 
@@ -34,8 +49,6 @@ public class DayFragment extends Fragment {
                 trans.commit();
             }
         });
-
-        TextView txtView = (TextView) layout.findViewById(R.id.todayfrag);
 
         return layout;
     }
