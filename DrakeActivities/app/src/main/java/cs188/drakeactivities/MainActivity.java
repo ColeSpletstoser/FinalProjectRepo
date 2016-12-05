@@ -38,6 +38,82 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
+        EventClass proj1 = new EventClass();
+        EventClass proj2 = new EventClass();
+        EventClass proj3 = new EventClass();
+        EventClass proj4 = new EventClass();
+        EventClass proj5 = new EventClass();
+        EventClass proj6 = new EventClass();
+        EventClass proj7 = new EventClass();
+
+        proj1.setEventTitle("");
+        proj1.setOrganizationUsername("");
+        proj1.setEventTime("");
+        proj1.setEventDay(14);
+        proj1.setEventMonth(12);
+        proj1.setEventYear(3000);
+        proj1.setEventDescription("I've been to the year 3000, not much has changed, but they live underwater");
+        proj1.setEventCode("JonasBRos");
+
+        proj2.setEventTitle("");
+        proj2.setOrganizationUsername("");
+        proj2.setEventTime("");
+        proj2.setEventDay(15);
+        proj2.setEventMonth(12);
+        proj2.setEventYear(2016);
+        proj2.setEventDescription("");
+        proj2.setEventCode("");
+
+        proj3.setEventTitle("");
+        proj3.setOrganizationUsername("");
+        proj3.setEventTime("");
+        proj3.setEventDay(16);
+        proj3.setEventMonth(12);
+        proj3.setEventYear(2016);
+        proj3.setEventDescription("");
+        proj3.setEventCode("");
+
+        proj4.setEventTitle("");
+        proj4.setOrganizationUsername("");
+        proj4.setEventTime("");
+        proj4.setEventDay(17);
+        proj4.setEventMonth(12);
+        proj4.setEventYear(2016);
+        proj4.setEventDescription("");
+        proj4.setEventCode("");
+
+        proj5.setEventTitle("");
+        proj5.setOrganizationUsername("");
+        proj5.setEventTime("");
+        proj5.setEventDay(18);
+        proj5.setEventMonth(12);
+        proj5.setEventYear(2016);
+        proj5.setEventDescription("");
+        proj5.setEventCode("");
+
+        proj6.setEventTitle("");
+        proj6.setOrganizationUsername("");
+        proj6.setEventTime("");
+        proj6.setEventDay(19);
+        proj6.setEventMonth(12);
+        proj6.setEventYear(2016);
+        proj6.setEventDescription("");
+        proj6.setEventCode("");
+
+        proj7.setEventTitle("");
+        proj7.setOrganizationUsername("");
+        proj7.setEventTime("");
+        proj7.setEventDay(20);
+        proj7.setEventMonth(12);
+        proj7.setEventYear(2016);
+        proj7.setEventDescription("");
+        proj7.setEventCode("");
+
+
+
+
+
+
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {

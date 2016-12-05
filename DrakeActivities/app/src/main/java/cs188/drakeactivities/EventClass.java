@@ -10,7 +10,9 @@ public class EventClass
     public String organizationUsername;
     public String eventTime;
     public int positionTime;
-    public String eventDate;
+    public int eventDay;
+    public int eventMonth;
+    public int eventYear;
     public double longitude;
     public double latitude;
     public String eventDescription;
@@ -48,9 +50,19 @@ public class EventClass
     }
 
 
-    public String getEventDate() { return eventDate; }
+    public int getEventDay() { return eventDay; }
 
-    public void setEventDate(String date) { this.eventDate = date; }
+    public void setEventDay(int day) { this.eventDay = day; }
+
+
+    public int getEventMonth() { return eventMonth; }
+
+    public void setEventMonth(int month) { this.eventMonth = month; }
+
+
+    public int getEventYear() { return eventYear; }
+
+    public void setEventYear(int year) { this.eventYear = year; }
 
 
     public double getLongitude() { return longitude; }
