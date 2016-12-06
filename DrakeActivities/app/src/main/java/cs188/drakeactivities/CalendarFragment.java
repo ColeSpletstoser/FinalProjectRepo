@@ -33,7 +33,7 @@ public class CalendarFragment extends Fragment {
 
                 Bundle args = new Bundle();
                 args.putInt("eventYear", year);
-                args.putInt("eventMonth", month);
+                args.putInt("eventMonth", month+1);
                 args.putInt("eventDay", dayOfMonth);
                 dayFragment.setArguments(args);
 

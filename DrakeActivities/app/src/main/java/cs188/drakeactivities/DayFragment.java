@@ -31,9 +31,10 @@ public class DayFragment extends Fragment {
         int eventDay = getArguments().getInt("eventDay", 0);
         int eventMonth = getArguments().getInt("eventMonth", 0);
 
-        dayTextView.append(String.valueOf(eventDay));
         dayTextView.append(" ");
         dayTextView.append(String.valueOf(eventMonth));
+        dayTextView.append(" ");
+        dayTextView.append(String.valueOf(eventDay));
         dayTextView.append(" ");
         dayTextView.append(String.valueOf(eventYear));
 
