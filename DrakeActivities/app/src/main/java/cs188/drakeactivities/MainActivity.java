@@ -55,59 +55,59 @@ public class MainActivity extends AppCompatActivity {
         proj1.setEventDescription("Come to the Knapp and support the Drake Men’s Basketball as they take on Iona!");
         proj1.setEventCode("SportsGoSports");
 
-        proj2.setEventTitle("Snowman building contest");
-        proj2.setOrganizationUsername("SAB");
-        proj2.setEventTime("1:00-3:00 pm");
-        proj2.setEventDay(15);
+        proj2.setEventTitle("Christmas Dinner");
+        proj2.setOrganizationUsername("Sodexo");
+        proj2.setEventTime("5:00 - 7:00 pm");
+        proj2.setEventDay(14);
         proj2.setEventMonth(12);
         proj2.setEventYear(2016);
-        proj2.setEventDescription("");
-        proj2.setEventCode("");
+        proj2.setEventDescription("Join us for a delicious Christmas dinner this Wednesday.");
+        proj2.setEventCode("XmasYumYum");
 
-        proj3.setEventTitle("");
-        proj3.setOrganizationUsername("");
-        proj3.setEventTime("");
-        proj3.setEventDay(16);
+        proj3.setEventTitle("Snowman Building Contest");
+        proj3.setOrganizationUsername("SAB");
+        proj3.setEventTime("1:00 - 3:00 pm");
+        proj3.setEventDay(14);
         proj3.setEventMonth(12);
         proj3.setEventYear(2016);
-        proj3.setEventDescription("");
-        proj3.setEventCode("");
+        proj3.setEventDescription("Come build your best snowman, and see how you fare against other students. President Martin will be there to judge the snowmen.");
+        proj3.setEventCode("FrostyTheSnowBulldog");
 
-        proj4.setEventTitle("");
-        proj4.setOrganizationUsername("");
-        proj4.setEventTime("");
-        proj4.setEventDay(17);
+        proj4.setEventTitle("Squirrel Watching");
+        proj4.setOrganizationUsername("Drake University");
+        proj4.setEventTime("3:00 pm");
+        proj4.setEventDay(15);
         proj4.setEventMonth(12);
         proj4.setEventYear(2016);
-        proj4.setEventDescription("");
-        proj4.setEventCode("");
+        proj4.setEventDescription("Bring your friends, phones, and nuts as we gather to watch the squirrel in its natural habitat! Hand feed at your own risk.");
+        proj4.setEventCode("FriendsPhonesNuts");
 
-        proj5.setEventTitle("");
-        proj5.setOrganizationUsername("");
-        proj5.setEventTime("");
-        proj5.setEventDay(18);
-        proj5.setEventMonth(12);
+        proj5.setEventTitle("Speed Dating");
+        proj5.setOrganizationUsername("SAB");
+        proj5.setEventTime("8:00 pm");
+        proj5.setEventDay(14);
+        proj5.setEventMonth(2);
         proj5.setEventYear(2016);
-        proj5.setEventDescription("");
-        proj5.setEventCode("");
+        proj5.setEventDescription("Don’t have any plans on Valentines day? Are you forever alone? Then come to Upper Olmsted and join us as we try to match students through 2 minutes speed dates! Dress to impress.");
+        proj5.setEventCode("Sad-N-Lonely");
 
-        proj6.setEventTitle("");
-        proj6.setOrganizationUsername("");
-        proj6.setEventTime("");
-        proj6.setEventDay(19);
+        proj6.setEventTitle("Blood Drive");
+        proj6.setOrganizationUsername("Drake University/Blood America");
+        proj6.setEventTime("9:00 am – 5:00 pm");
+        proj6.setEventDay(1);
         proj6.setEventMonth(12);
         proj6.setEventYear(2016);
-        proj6.setEventDescription("");
-        proj6.setEventCode("");
+        proj6.setEventDescription("Come to blood mobile and donate your blood! – No vampires here.");
+        proj6.setEventCode("TeamEdward");
 
-        proj7.setEventTitle("");
-        proj7.setOrganizationUsername("");
-        proj7.setEventTime("");
+        proj7.setEventTitle("Arm-wrestling tournament");
+        proj7.setOrganizationUsername("SAB");
+        proj7.setEventTime("7:00 pm");
         proj7.setEventDay(20);
-        proj7.setEventMonth(12);
+        proj7.setEventMonth(1);
         proj7.setEventYear(2016);
-        proj7.setEventDescription("");
-        proj7.setEventCode("");
+        proj7.setEventDescription("Think you got what it takes to be the arm-wrestling champ of Drake University? – Then join us at 7:00 pm in Upper Olmsted. Tables will be provided.");
+        proj7.setEventCode("EgoDeflater5000");
 
 
 
