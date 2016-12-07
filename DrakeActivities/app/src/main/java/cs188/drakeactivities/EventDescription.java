@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 
@@ -21,8 +22,11 @@ public class EventDescription extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v =  inflater.inflate(R.layout.fragment_event_description, container, false);
-
+        String eventTitle, eventDesc;
+        ImageView image = (ImageView) v.findViewById(R.id.imageView);
         Button enter = (Button) v.findViewById(R.id.enterCode);
+
+        //image.setImageResource(R.drawable.imagename)
 
         final EditText code = (EditText) v.findViewById(R.id.eventCode);
 
@@ -34,12 +38,10 @@ public class EventDescription extends Fragment {
                 int duration = Toast.LENGTH_SHORT;
                 Context context = getActivity();
                 Toast toast = Toast.makeText(context, "Saved event to calendar", duration);
-                toast.show();
                 Intent calIntent = new Intent(Intent.ACTION_INSERT);
                 calIntent.setData(CalendarContract.Events.CONTENT_URI);
-
                 startActivity(calIntent);
-
+                toast.show();
             }
         });
 
