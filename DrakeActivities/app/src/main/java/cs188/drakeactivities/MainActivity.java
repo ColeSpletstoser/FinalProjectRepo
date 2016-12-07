@@ -110,10 +110,6 @@ public class MainActivity extends AppCompatActivity {
         proj7.setEventCode("EgoDeflater5000");
 
 
-
-
-
-
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
