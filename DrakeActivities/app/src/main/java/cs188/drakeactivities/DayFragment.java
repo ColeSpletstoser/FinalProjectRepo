@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -65,9 +66,23 @@ public class DayFragment extends ListFragment {
             }
         }
 
-        this.setListAdapter(new ArrayAdapter<String>(
-                getActivity(), R.layout.day_list_item,
-                R.id.Itemname,itemname));
+        ListView list;
+
+        CustomListAdapter adapter=new CustomListAdapter(getActivity(), events);
+        list=(ListView)layout.findViewById(R.id.list);
+        list.setAdapter(adapter);
+
+//        list.setOnItemClickListener(new OnItemClickListener() {
+//
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view,
+//                                    int position, long id) {
+//                // TODO Auto-generated method stub
+//                String Slecteditem= itemname[+position];
+//                Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
 
         return layout;
     }
