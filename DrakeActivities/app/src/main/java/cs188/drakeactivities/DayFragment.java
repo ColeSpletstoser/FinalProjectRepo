@@ -11,8 +11,11 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
+
+import java.util.ArrayList;
 
 /**
  * Created by Spletz on 11/15/16.
@@ -64,8 +67,8 @@ public class DayFragment extends ListFragment {
 //            }
 //        });
 
-
-
+        ArrayList<EventClass> events = ((MainActivity)getActivity()).events;
+        Toast.makeText(getActivity(), String.valueOf(events.size()), Toast.LENGTH_SHORT);
 
         this.setListAdapter(new ArrayAdapter<String>(
                 getActivity(), R.layout.day_list_item,

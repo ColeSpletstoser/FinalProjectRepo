@@ -1,5 +1,6 @@
 package cs188.drakeactivities;
 
+import android.app.usage.UsageEvents;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -9,11 +10,15 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private TabLayout tabLayout;
     public CustomAdapter adapter;
     public FragmentManager mFragmentManager;
+
+    ArrayList<EventClass> events;
 
     Fragment switchable;
 
@@ -117,7 +122,13 @@ public class MainActivity extends AppCompatActivity {
         proj7.setEventIcon(R.drawable.armwhrestling);
 
 
-        EventClass[] events = {proj1, proj2, proj3, proj4, proj5, proj6, proj7};
+        events.add(proj1);
+        events.add(proj2);
+        events.add(proj3);
+        events.add(proj4);
+        events.add(proj5);
+        events.add(proj6);
+        events.add(proj7);
 
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
