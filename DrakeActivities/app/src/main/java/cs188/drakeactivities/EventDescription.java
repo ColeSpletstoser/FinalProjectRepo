@@ -14,19 +14,29 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
 public class EventDescription extends Fragment {
     @Nullable
-    @Override
+    String eventCode;
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v =  inflater.inflate(R.layout.fragment_event_description, container, false);
         String eventTitle, eventDesc;
         ImageView image = (ImageView) v.findViewById(R.id.imageView);
         Button enter = (Button) v.findViewById(R.id.enterCode);
+        TextView titleText = (TextView) v.findViewById(R.id.EventTitle);
+        TextView descText = (TextView) v.findViewById(R.id.Description);
 
-        //image.setImageResource(R.drawable.imagename)
+        eventTitle = "Tommy";
+        eventDesc = "Tommy";
+
+        titleText.setText(eventTitle);
+        descText.setText(eventDesc);
+
+
+        //image.setImageResource(R.drawable.imagename) for setting the image in the top
 
         final EditText code = (EditText) v.findViewById(R.id.eventCode);
 
@@ -40,6 +50,10 @@ public class EventDescription extends Fragment {
                 Toast toast = Toast.makeText(context, "Saved event to calendar", duration);
                 Intent calIntent = new Intent(Intent.ACTION_INSERT);
                 calIntent.setData(CalendarContract.Events.CONTENT_URI);
+                calIntent.setType("vnd.android.cursor.item/event");
+                calIntent.putExtra(CalendarContract.Events.TITLE, "Tommy");
+                calIntent.putExtra(CalendarContract.Events.EVENT_LOCATION, "Tommy");
+                calIntent.putExtra(CalendarContract.Events.DESCRIPTION, "Tommy");
                 startActivity(calIntent);
                 toast.show();
             }
@@ -48,10 +62,12 @@ public class EventDescription extends Fragment {
         enter.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+                eventCode = code.getText().toString();
                 int duration = Toast.LENGTH_SHORT;
                 Context context = getActivity();
-                Toast toast = Toast.makeText(context, "Points awarded", duration);
+                Toast toast = Toast.makeText(context, eventCode, duration);
                 toast.show();
+
             }
         });
 

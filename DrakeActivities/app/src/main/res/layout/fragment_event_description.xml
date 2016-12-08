@@ -45,7 +45,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:text="Event Description Sample Text"
+                    android:text="If you have selected an event this is a bug."
                     android:layout_width="325dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/EventTitle"
@@ -54,7 +54,6 @@
                     android:textStyle="normal|bold" />
             </LinearLayout>
             <TextView
-                android:text="Sample Description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/Description"
@@ -62,7 +61,8 @@
                 android:textColor="@android:color/black"
                 android:textSize="18sp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp" />
+                android:layout_marginRight="20dp"
+                android:text="If you have selected an event this is a bug." />
 
             <EditText
                 android:layout_width="168dp"
