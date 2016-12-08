@@ -2,15 +2,12 @@ package cs188.drakeactivities;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.TextView;
 
 /**
  * Created by Spletz on 11/15/16.
@@ -20,7 +17,7 @@ public class TodayFragment extends ListFragment {
     private Button testButton;
 
     String[] itemname ={
-            "Safari",
+            "Drake MBB vs Iona University",
             "Camera",
             "Global",
             "FireFox",

@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         proj1.setEventYear(2016);
         proj1.setEventDescription("Come to the Knapp and support the Drake Men’s Basketball as they take on Iona!");
         proj1.setEventCode("SportsGoSports");
+        proj1.setEventIcon(R.drawable.drake_basketball);
 
         proj2.setEventTitle("Christmas Dinner");
         proj2.setOrganizationUsername("Sodexo");
@@ -63,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         proj2.setEventYear(2016);
         proj2.setEventDescription("Join us for a delicious Christmas dinner this Wednesday.");
         proj2.setEventCode("XmasYumYum");
+        proj2.setEventIcon(R.drawable.christmas_dinner);
 
         proj3.setEventTitle("Snowman Building Contest");
         proj3.setOrganizationUsername("SAB");
@@ -72,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
         proj3.setEventYear(2016);
         proj3.setEventDescription("Come build your best snowman, and see how you fare against other students. President Martin will be there to judge the snowmen.");
         proj3.setEventCode("FrostyTheSnowBulldog");
+        proj3.setEventIcon(R.drawable.snowman_building);
 
         proj4.setEventTitle("Squirrel Watching");
         proj4.setOrganizationUsername("Drake University");
@@ -81,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
         proj4.setEventYear(2016);
         proj4.setEventDescription("Bring your friends, phones, and nuts as we gather to watch the squirrel in its natural habitat! Hand feed at your own risk.");
         proj4.setEventCode("FriendsPhonesNuts");
+        proj4.setEventIcon(R.drawable.squirrel_watching);
 
         proj5.setEventTitle("Speed Dating");
         proj5.setOrganizationUsername("SAB");
@@ -90,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
         proj5.setEventYear(2016);
         proj5.setEventDescription("Don’t have any plans on Valentines day? Are you forever alone? Then come to Upper Olmsted and join us as we try to match students through 2 minutes speed dates! Dress to impress.");
         proj5.setEventCode("Sad-N-Lonely");
+        proj5.setEventIcon(R.drawable.maxresdefault);
 
         proj6.setEventTitle("Blood Drive");
         proj6.setOrganizationUsername("Drake University/Blood America");
@@ -99,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
         proj6.setEventYear(2016);
         proj6.setEventDescription("Come to blood mobile and donate your blood! – No vampires here.");
         proj6.setEventCode("TeamEdward");
+        proj6.setEventIcon(R.drawable.blooddrive);
 
         proj7.setEventTitle("Arm-wrestling tournament");
         proj7.setOrganizationUsername("SAB");
@@ -108,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
         proj7.setEventYear(2016);
         proj7.setEventDescription("Think you got what it takes to be the arm-wrestling champ of Drake University? – Then join us at 7:00 pm in Upper Olmsted. Tables will be provided.");
         proj7.setEventCode("EgoDeflater5000");
+        proj7.setEventIcon(R.drawable.armwhrestling);
 
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
