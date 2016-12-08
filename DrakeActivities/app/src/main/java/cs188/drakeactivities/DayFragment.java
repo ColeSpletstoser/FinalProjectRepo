@@ -6,11 +6,9 @@ import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -54,22 +52,11 @@ public class DayFragment extends ListFragment {
 //        });
 
         ArrayList<EventClass> events = ((MainActivity)getActivity()).events;
-        Toast.makeText(getActivity(), String.valueOf(events.size()), Toast.LENGTH_SHORT);
-
-        String[] itemname = new String[7];
-
-        for(int i = 0; i < events.size(); i++)
-        {
-            if (events.get(i).getEventYear() == eventYear && events.get(i).getEventMonth() == eventMonth && events.get(i).getEventDay() == eventDay)
-            {
-                itemname[i] = events.get(i).getEventTitle();
-            }
-        }
 
         ListView list;
-
-        CustomListAdapter adapter=new CustomListAdapter(getActivity(), events);
-        list=(ListView)layout.findViewById(R.id.list);
+//
+        CustomListAdapter adapter = new CustomListAdapter(getActivity(), events);
+        list =(ListView)layout.findViewById(android.R.id.list);
         list.setAdapter(adapter);
 
 //        list.setOnItemClickListener(new OnItemClickListener() {
