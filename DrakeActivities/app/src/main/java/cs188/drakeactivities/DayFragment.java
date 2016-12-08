@@ -2,8 +2,6 @@ package cs188.drakeactivities;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,8 +10,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -24,17 +20,6 @@ public class DayFragment extends ListFragment {
 
     private Button testButton;
     private TextView dayTextView;
-
-    String[] itemname ={
-            "Safari",
-            "Camera",
-            "Global",
-            "FireFox",
-            "UC Browser",
-            "Android Folder",
-            "VLC Player",
-            "Cold War"
-    };
 
     @Nullable
     @Override
@@ -69,6 +54,16 @@ public class DayFragment extends ListFragment {
 
         ArrayList<EventClass> events = ((MainActivity)getActivity()).events;
         Toast.makeText(getActivity(), String.valueOf(events.size()), Toast.LENGTH_SHORT);
+
+        String[] itemname = new String[7];
+
+        for(int i = 0; i < events.size(); i++)
+        {
+            if (events.get(i).getEventYear() == eventYear && events.get(i).getEventMonth() == eventMonth && events.get(i).getEventDay() == eventDay)
+            {
+                itemname[i] = events.get(i).getEventTitle();
+            }
+        }
 
         this.setListAdapter(new ArrayAdapter<String>(
                 getActivity(), R.layout.day_list_item,

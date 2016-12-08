@@ -1,6 +1,5 @@
 package cs188.drakeactivities;
 
-import android.app.usage.UsageEvents;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -96,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         proj5.setEventTime("8:00 pm");
         proj5.setEventDay(14);
         proj5.setEventMonth(2);
-        proj5.setEventYear(2016);
+        proj5.setEventYear(2017);
         proj5.setEventDescription("Don’t have any plans on Valentines day? Are you forever alone? Then come to Upper Olmsted and join us as we try to match students through 2 minutes speed dates! Dress to impress.");
         proj5.setEventCode("Sad-N-Lonely");
         proj5.setEventIcon(R.drawable.maxresdefault);
@@ -106,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
         proj6.setEventTime("9:00 am – 5:00 pm");
         proj6.setEventDay(1);
         proj6.setEventMonth(12);
-        proj6.setEventYear(2016);
+        proj6.setEventYear(2017);
         proj6.setEventDescription("Come to blood mobile and donate your blood! – No vampires here.");
         proj6.setEventCode("TeamEdward");
         proj6.setEventIcon(R.drawable.blooddrive);
@@ -116,12 +115,12 @@ public class MainActivity extends AppCompatActivity {
         proj7.setEventTime("7:00 pm");
         proj7.setEventDay(20);
         proj7.setEventMonth(1);
-        proj7.setEventYear(2016);
+        proj7.setEventYear(2017);
         proj7.setEventDescription("Think you got what it takes to be the arm-wrestling champ of Drake University? – Then join us at 7:00 pm in Upper Olmsted. Tables will be provided.");
         proj7.setEventCode("EgoDeflater5000");
         proj7.setEventIcon(R.drawable.armwhrestling);
 
-
+        events = new ArrayList<EventClass>();
         events.add(proj1);
         events.add(proj2);
         events.add(proj3);

@@ -39,7 +39,7 @@ public class EventClass
     public String getEventTime() { return eventTime; }
 
     public void setEventTime(String time) {
-        this.eventTitle = time;
+        this.eventTime = time;
     }
 
 
