@@ -98,7 +98,8 @@
             app:layout_anchor="@id/viewA"
             app:layout_anchorGravity="bottom|right|end"
             app:backgroundTint="@android:color/holo_orange_light"
-            android:background="@android:drawable/ic_menu_my_calendar" />
+            android:background="@android:drawable/ic_menu_my_calendar"
+            android:src="@android:drawable/ic_menu_my_calendar" />
 
     </android.support.design.widget.CoordinatorLayout>
 </FrameLayout>
