@@ -117,6 +117,9 @@ public class MainActivity extends AppCompatActivity {
         proj7.setEventIcon(R.drawable.armwhrestling);
 
 
+        EventClass[] events = {proj1, proj2, proj3, proj4, proj5, proj6, proj7};
+
+
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {

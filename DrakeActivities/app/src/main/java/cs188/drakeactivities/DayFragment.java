@@ -4,9 +4,11 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -15,10 +17,21 @@ import org.w3c.dom.Text;
 /**
  * Created by Spletz on 11/15/16.
  */
-public class DayFragment extends Fragment {
+public class DayFragment extends ListFragment {
 
     private Button testButton;
     private TextView dayTextView;
+
+    String[] itemname ={
+            "Safari",
+            "Camera",
+            "Global",
+            "FireFox",
+            "UC Browser",
+            "Android Folder",
+            "VLC Player",
+            "Cold War"
+    };
 
     @Nullable
     @Override
@@ -50,6 +63,13 @@ public class DayFragment extends Fragment {
 //                trans.commit();
 //            }
 //        });
+
+
+
+
+        this.setListAdapter(new ArrayAdapter<String>(
+                getActivity(), R.layout.day_list_item,
+                R.id.Itemname,itemname));
 
         return layout;
     }
