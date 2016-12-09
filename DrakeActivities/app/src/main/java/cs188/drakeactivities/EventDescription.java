@@ -17,6 +17,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Calendar;
+
 
 public class EventDescription extends Fragment {
     @Nullable
@@ -48,9 +50,17 @@ public class EventDescription extends Fragment {
                 int duration = Toast.LENGTH_SHORT;
                 Context context = getActivity();
                 Toast toast = Toast.makeText(context, "Saved event to calendar", duration);
+                Calendar cal = Calendar.getInstance();
+
+                //cal.set(year month day hour minute second)
+
+
+                //cal.getTimeInMillis();
+
                 Intent calIntent = new Intent(Intent.ACTION_INSERT);
                 calIntent.setData(CalendarContract.Events.CONTENT_URI);
                 calIntent.setType("vnd.android.cursor.item/event");
+                //calIntent.putExtra(CalendarContract.Events.DTSTART, ) specify start time
                 calIntent.putExtra(CalendarContract.Events.TITLE, "Tommy");
                 calIntent.putExtra(CalendarContract.Events.EVENT_LOCATION, "Tommy");
                 calIntent.putExtra(CalendarContract.Events.DESCRIPTION, "Tommy");
