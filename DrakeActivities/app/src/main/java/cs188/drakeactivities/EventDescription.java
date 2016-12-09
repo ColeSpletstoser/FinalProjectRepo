@@ -40,6 +40,7 @@ public class EventDescription extends Fragment {
 
         //image.setImageResource(R.drawable.imagename) for setting the image in the top
 
+
         final EditText code = (EditText) v.findViewById(R.id.eventCode);
 
         FloatingActionButton fab = (FloatingActionButton) v.findViewById(R.id.fab);
@@ -53,14 +54,11 @@ public class EventDescription extends Fragment {
                 Calendar cal = Calendar.getInstance();
 
                 //cal.set(year month day hour minute second)
-
-
-                //cal.getTimeInMillis();
-
+                //will need to figure out how to split time into hour/minute
                 Intent calIntent = new Intent(Intent.ACTION_INSERT);
                 calIntent.setData(CalendarContract.Events.CONTENT_URI);
                 calIntent.setType("vnd.android.cursor.item/event");
-                //calIntent.putExtra(CalendarContract.Events.DTSTART, ) specify start time
+                //calIntent.putExtra(CalendarContract.Events.DTSTART, cal.getTimeInMillis()); specify start time
                 calIntent.putExtra(CalendarContract.Events.TITLE, "Tommy");
                 calIntent.putExtra(CalendarContract.Events.EVENT_LOCATION, "Tommy");
                 calIntent.putExtra(CalendarContract.Events.DESCRIPTION, "Tommy");
