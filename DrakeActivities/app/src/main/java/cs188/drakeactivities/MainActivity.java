@@ -29,6 +29,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 
 public class MainActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener{
@@ -46,7 +47,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
 
     ArrayList<EventClass> events;
     ArrayList<Integer> savedEvents;
-    Set<String> eventSet;
+    Set<String> eventSet = new HashSet<>(100);
+
+    boolean isLoggedIn;
 
     Fragment switchable;
 
@@ -297,6 +300,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         }
 
         //points, isloggedin,
+
+        editor.putStringSet("eventset", eventSet);
+        editor.putInt("points", userPoints);
+        editor.putBoolean("isLoggedIn", isLoggedIn);
 
         editor.commit();
     }
