@@ -2,10 +2,13 @@ package cs188.drakeactivities;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -27,9 +30,9 @@ public class DayFragment extends ListFragment {
 
 //        dayTextView = (TextView) layout.findViewById(R.id.dayTextView);
 
-        int eventYear = getArguments().getInt("eventYear", 0);
-        int eventDay = getArguments().getInt("eventDay", 0);
-        int eventMonth = getArguments().getInt("eventMonth", 0);
+        final int eventYear = getArguments().getInt("eventYear", 0);
+        final int eventDay = getArguments().getInt("eventDay", 0);
+        final int eventMonth = getArguments().getInt("eventMonth", 0);
 
 //        dayTextView.append(" ");
 //        dayTextView.append(String.valueOf(eventMonth));
@@ -51,7 +54,7 @@ public class DayFragment extends ListFragment {
 //            }
 //        });
 
-        ArrayList<EventClass> events = ((MainActivity)getActivity()).events;
+        final ArrayList<EventClass> events = ((MainActivity)getActivity()).events;
 
         ListView list;
 //
@@ -59,17 +62,32 @@ public class DayFragment extends ListFragment {
         list =(ListView)layout.findViewById(android.R.id.list);
         list.setAdapter(adapter);
 
-//        list.setOnItemClickListener(new OnItemClickListener() {
-//
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view,
-//                                    int position, long id) {
-//                // TODO Auto-generated method stub
-//                String Slecteditem= itemname[+position];
-//                Toast.makeText(getApplicationContext(), Slecteditem, Toast.LENGTH_SHORT).show();
-//
-//            }
-//        });
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+                FragmentTransaction trans = getFragmentManager()
+                        .beginTransaction();
+
+                Fragment eventDescription = new EventDescription();
+
+                //title, desc, date, time, pic
+
+                Bundle args = new Bundle();
+
+                args.putString("eventTitle", events.get(position).getEventTitle());
+                args.putString("eventDescription", events.get(position).getEventDescription());
+                args.putInt("eventYear", eventYear);
+                args.putInt("eventMonth", eventMonth);
+                args.putInt("eventDay", eventDay);
+                args.putString("eventTime", events.get(position).getEventTime());
+                args.putString("eventTitle", events.get(position).getEventTitle());
+                args.putInt("eventIcon", events.get(position).getEventIcon());
+                eventDescription.setArguments(args);
+
+                trans.replace(R.id.holder1, eventDescription);
+                trans.addToBackStack(null);
+                trans.commit();
+            }
+        });
 
         return layout;
     }
