@@ -51,6 +51,22 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        switchable = new FirstFragment();
+
+        adapter = new CustomAdapter(getSupportFragmentManager(), getApplicationContext());
+
+        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        tabLayout.addTab(tabLayout.newTab().setText("Today"));
+        tabLayout.addTab(tabLayout.newTab().setText("Calendar"));
+        tabLayout.addTab(tabLayout.newTab().setText("Profile"));
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
+        viewPager = (ViewPager) findViewById(R.id.viewPager);
+        viewPager.setAdapter(adapter);
+        viewPager.setOffscreenPageLimit(2);
+
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+
         LocationManager lm = (LocationManager)this.getSystemService(Context.LOCATION_SERVICE);
         boolean gps_enabled = false;
         boolean network_enabled = false;
@@ -97,21 +113,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                     .build();
         }
 
-        switchable = new FirstFragment();
 
-        adapter = new CustomAdapter(getSupportFragmentManager(), getApplicationContext());
-
-        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
-        tabLayout.addTab(tabLayout.newTab().setText("Today"));
-        tabLayout.addTab(tabLayout.newTab().setText("Calendar"));
-        tabLayout.addTab(tabLayout.newTab().setText("Profile"));
-        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-
-        viewPager = (ViewPager) findViewById(R.id.viewPager);
-        viewPager.setAdapter(adapter);
-        viewPager.setOffscreenPageLimit(2);
-
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
         EventClass proj1 = new EventClass();
         EventClass proj2 = new EventClass();
@@ -239,6 +241,18 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         }
         // Default action on back pressed
         else super.onBackPressed();
+    }
+
+    @Override
+    protected void onStart() {
+        mGoogleApiClient.connect();
+        super.onStart();
+    }
+
+    @Override
+    protected void onStop() {
+        mGoogleApiClient.disconnect();
+        super.onStop();
     }
 
     @Override

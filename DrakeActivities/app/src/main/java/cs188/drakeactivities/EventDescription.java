@@ -84,8 +84,8 @@ public class EventDescription extends Fragment {
             @Override
             public void onClick(View view) {
                 double[] userLocation = ((MainActivity) getActivity()).getLocation();
-                Toast.makeText(getActivity(), String.valueOf(userLocation[0]), Toast.LENGTH_SHORT).show();
-                Toast.makeText(getActivity(), String.valueOf(userLocation[1]), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity(), String.valueOf(userLocation[0]), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity(), String.valueOf(userLocation[1]), Toast.LENGTH_SHORT).show();
 
                 eventCode = code.getText().toString();
                 //int duration = Toast.LENGTH_SHORT;
