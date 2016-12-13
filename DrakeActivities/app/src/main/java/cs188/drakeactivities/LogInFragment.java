@@ -40,10 +40,21 @@ public class LogInFragment extends Fragment {
                 if(user.equals(fakeUser) && pass.equals(fakePass))
                 {
                     //this is where we would have a database and check passwords
-                    Fragment ProfileFragment = new ProfileFragment();
+//                    Fragment ProfileFragment = new ProfileFragment();
+//                    FragmentTransaction trans = getFragmentManager()
+//                            .beginTransaction();
+//                    trans.replace(R.id.holder2, ProfileFragment);
+//                    trans.commit();
+//
+//                    FragmentTransaction trans = getFragmentManager()
+//                            .beginTransaction();
+
                     FragmentTransaction trans = getFragmentManager()
                             .beginTransaction();
-                    trans.replace(R.id.holder2, ProfileFragment);
+
+                    Fragment profileFragment = new ProfileFragment();
+                    trans.replace(R.id.holder1, profileFragment);
+                    trans.addToBackStack(null);
                     trans.commit();
                 }
             }
