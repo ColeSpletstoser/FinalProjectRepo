@@ -9,12 +9,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CalendarView;
 
+import java.util.ArrayList;
+
 /**
  * Created by Spletz on 11/15/16.
  */
 public class CalendarFragment extends Fragment {
 
     private CalendarView calendarView;
+    ArrayList<EventClass> events;
+    ArrayList<EventClass> dayEvents;
 
     @Nullable
     @Override
@@ -27,6 +31,21 @@ public class CalendarFragment extends Fragment {
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
+                events = ((MainActivity)getActivity()).events;
+
+                dayEvents = new ArrayList<EventClass>();
+
+                for (EventClass event: events)
+                {
+                    if(event.getEventDay() == dayOfMonth && event.getEventMonth() == month+1 && event.getEventYear() == year)
+                    {
+                        dayEvents.add(event);
+                    }
+                }
+                if (dayEvents == null || dayEvents.isEmpty()){
+                    return;
+                }
+
                 FragmentTransaction trans = getFragmentManager()
                         .beginTransaction();
 

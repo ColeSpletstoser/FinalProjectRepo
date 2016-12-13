@@ -64,7 +64,7 @@ public class DayFragment extends Fragment {
         {
             if(event.getEventDay() == eventDay && event.getEventMonth() == eventMonth && event.getEventYear() == eventYear)
             {
-
+                dayEvents.add(event);
             }
         }
 
