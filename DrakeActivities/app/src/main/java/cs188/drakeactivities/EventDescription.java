@@ -34,6 +34,7 @@ public class EventDescription extends Fragment {
         final String eventTitle = getArguments().getString("eventTitle", "");
         final String eventDescription = getArguments().getString("eventDescription", "");
         final int eventIcon = getArguments().getInt("eventIcon", 0);
+        //final int eventTime = getArguments().getInt("eventTime", 0);
 
         ImageView image = (ImageView) v.findViewById(R.id.imageView);
         Button enter = (Button) v.findViewById(R.id.enterCode);
@@ -43,13 +44,14 @@ public class EventDescription extends Fragment {
 
         titleText.setText(eventTitle);
         descText.setText(eventDescription);
-        
 
 
 
 
 
-        //image.setImageResource(R.drawable.eventIcon);
+
+
+        image.setImageResource(eventIcon);
 
 
         final EditText code = (EditText) v.findViewById(R.id.eventCode);
@@ -59,22 +61,22 @@ public class EventDescription extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int duration = Toast.LENGTH_SHORT;
+                //int duration = Toast.LENGTH_SHORT;
                 Context context = getActivity();
-                Toast toast = Toast.makeText(context, "Saved event to calendar", duration);
+                //Toast toast = Toast.makeText(context, "Saved event to calendar", duration);
                 Calendar cal = Calendar.getInstance();
 
-                //cal.set(year month day hour minute second)
+                cal.set(eventYear, eventMonth, eventDay);
                 //will need to figure out how to split time into hour/minute
                 Intent calIntent = new Intent(Intent.ACTION_INSERT);
                 calIntent.setData(CalendarContract.Events.CONTENT_URI);
                 calIntent.setType("vnd.android.cursor.item/event");
                 //calIntent.putExtra(CalendarContract.Events.DTSTART, cal.getTimeInMillis()); specify start time
-                calIntent.putExtra(CalendarContract.Events.TITLE, "Tommy");
-                calIntent.putExtra(CalendarContract.Events.EVENT_LOCATION, "Tommy");
-                calIntent.putExtra(CalendarContract.Events.DESCRIPTION, "Tommy");
+                calIntent.putExtra(CalendarContract.Events.TITLE, eventTitle);
+                //calIntent.putExtra(CalendarContract.Events.EVENT_LOCATION, );
+                calIntent.putExtra(CalendarContract.Events.DESCRIPTION, eventDescription);
                 startActivity(calIntent);
-                toast.show();
+                //toast.show();
             }
         });
 
