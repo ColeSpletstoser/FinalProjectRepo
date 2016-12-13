@@ -73,8 +73,6 @@ public class EventDescription extends Fragment {
                 }
 
                 int points = ((MainActivity)getActivity()).getPoints();
-                enter.setVisibility(View.GONE);
-                pointsAwarded.setVisibility(View.VISIBLE);
                 FragmentTransaction trans = getFragmentManager()
                         .beginTransaction();
 
