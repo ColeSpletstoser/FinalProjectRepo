@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 /**
@@ -19,7 +21,11 @@ public class ProfileFragment extends Fragment {
 
         //do work here
 
-        TextView txtView = (TextView) layout.findViewById(R.id.proffrag);
+        ImageView profPic = (ImageView) layout.findViewById(R.id.profPic);
+        TextView name = (TextView) layout.findViewById(R.id.name);
+        TextView email = (TextView) layout.findViewById(R.id.email);
+        ProgressBar progress = (ProgressBar) layout.findViewById(R.id.progress);
+        TextView points = (TextView) layout.findViewById(R.id.points);
 
         return layout;
     }

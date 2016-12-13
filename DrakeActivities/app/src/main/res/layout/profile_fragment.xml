@@ -1,11 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
 
-    <TextView
-        android:text="Profile Fragment"
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/proffrag" />
+        app:srcCompat="@mipmap/ic_launcher"
+        android:id="@+id/profPic"
+        android:layout_weight="0.21" />
+
+    <TextView
+        android:text="Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/name"
+        android:layout_weight="0.02"
+        android:textAlignment="center"
+        android:fontFamily="sans-serif"
+        android:textSize="30sp"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:text="Email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/email"
+        android:layout_weight="0.07"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:textColor="@android:color/black" />
+
+    <ProgressBar
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress"
+        android:max="1000"
+        android:progress="500"
+        android:visibility="visible"
+        tools:visibility="visible"
+        android:paddingRight="40dp"
+        android:paddingLeft="40dp" />
+
+    <TextView
+        android:text="500/1000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/points"
+        android:layout_weight="0.07"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textStyle="normal|bold"
+        android:textSize="24sp" />
+
+    <TextView
+        android:text="Saved Events"
+        android:layout_width="163dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/savedText"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:textSize="24sp"
+        android:textColor="@android:color/black" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="239dp"
+        android:id="@+id/savedEvents"
+        android:layout_weight="0.51">
+        </ListView>
+
 </LinearLayout>

@@ -17,6 +17,10 @@ public class MainActivity extends AppCompatActivity {
     public CustomAdapter adapter;
     public FragmentManager mFragmentManager;
 
+
+    //make shared preference to store user points. Placeholder for now
+    protected int userPoints = 0;
+
     ArrayList<EventClass> events;
 
     Fragment switchable;
@@ -168,6 +172,16 @@ public class MainActivity extends AppCompatActivity {
         }
         // Default action on back pressed
         else super.onBackPressed();
+    }
+
+    public void addPoints(int pts)
+    {
+        userPoints += pts;
+    }
+
+    public int getUserPoints()
+    {
+        return userPoints;
     }
 
     private class CustomAdapter extends FragmentStatePagerAdapter {
