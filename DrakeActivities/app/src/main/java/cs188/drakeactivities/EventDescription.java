@@ -8,6 +8,7 @@ import android.provider.CalendarContract;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -89,17 +90,27 @@ public class EventDescription extends Fragment {
                 //Toast.makeText(getActivity(), String.valueOf(dist), Toast.LENGTH_SHORT).show();
 
                 String userInput = code.getText().toString();
-                //int duration = Toast.LENGTH_SHORT;
-                //Context context = getActivity();
-                //Toast toast = Toast.makeText(context, userInput, duration);
-                //toast.show();
-
 
 //                if(userInput.equals(eventCode) && dist <= 250) //can change 250 to whatever radius preferred
-
 //                {
                     ((MainActivity)getActivity()).addPoints(100);
-               // }
+
+                    int points = ((MainActivity)getActivity()).getPoints();
+
+                    FragmentTransaction trans = getFragmentManager()
+                            .beginTransaction();
+
+                    Fragment ProfileFragment = new ProfileFragment();
+
+                    Bundle args = new Bundle();
+
+                    args.putInt("points", points);
+                    ProfileFragment.setArguments(args);
+
+                    trans.replace(R.id.holder2, ProfileFragment);
+                    trans.addToBackStack(null);
+                    trans.commit();
+//                }
                 Intent intent = new Intent();
             }
         });

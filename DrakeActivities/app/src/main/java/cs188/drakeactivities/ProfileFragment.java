@@ -19,7 +19,8 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View layout = inflater.inflate(R.layout.profile_fragment, container, false);
 
-        //do work here
+        int currentPoints = getArguments().getInt("points", 0);
+
         String total = "/1000 points";
         String current;
 
@@ -30,9 +31,9 @@ public class ProfileFragment extends Fragment {
         TextView points = (TextView) layout.findViewById(R.id.points);
 
         int pts = ((MainActivity)getActivity()).getPoints();
-        progress.setProgress(pts);
+        progress.setProgress(currentPoints);
 
-        current = Integer.toString(pts);
+        current = Integer.toString(currentPoints);
         total = current + total;
         points.setText(total);
 
