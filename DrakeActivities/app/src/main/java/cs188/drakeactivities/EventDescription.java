@@ -94,8 +94,8 @@ public class EventDescription extends Fragment {
 
                 String userInput = code.getText().toString();
 
-//                if(userInput.equals(eventCode) && dist <= 250) //can change 250 to whatever radius preferred
-//                {
+                if(userInput.equals(eventCode) && dist <= 250) //can change 250 to whatever radius preferred
+                {
                     ((MainActivity)getActivity()).addPoints(100);
 
                     int points = ((MainActivity)getActivity()).getPoints();
@@ -113,7 +113,7 @@ public class EventDescription extends Fragment {
 
                     trans.replace(R.id.holder2, ProfileFragment);
                     trans.commit();
-//                }
+                }
 
             }
         });
