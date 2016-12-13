@@ -6,19 +6,19 @@ package cs188.drakeactivities;
 
 public class EventClass
 {
-    public String eventTitle;
-    public String organizationUsername;
-    public String eventTime;
-    public int positionTime;
-    public int eventDay;
-    public int eventMonth;
-    public int eventYear;
-    public double longitude;
-    public double latitude;
-    public String eventDescription;
-    public int eventIcon;
-    public int participantCount;
-    public String eventCode;
+    private String eventTitle;
+    private String organizationUsername;
+    private String eventTime;
+    private int positionTime;
+    private int eventDay;
+    private int eventMonth;
+    private int eventYear;
+    private double longitude;
+    private double latitude;
+    private String eventDescription;
+    private int eventIcon;
+    private int participantCount;
+    private String eventCode;
 
     public String getEventTitle() {
         return eventTitle;

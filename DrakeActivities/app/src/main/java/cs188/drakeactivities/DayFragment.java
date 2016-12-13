@@ -18,7 +18,7 @@ import java.util.ArrayList;
 /**
  * Created by Spletz on 11/15/16.
  */
-public class DayFragment extends ListFragment {
+public class DayFragment extends Fragment {
 
     private Button testButton;
     private TextView dayTextView;
@@ -58,8 +58,18 @@ public class DayFragment extends ListFragment {
 
         final ArrayList<EventClass> events = ((MainActivity)getActivity()).events;
 
+        final ArrayList<EventClass> dayEvents = new ArrayList<EventClass>();
+
+        for (EventClass event: events)
+        {
+            if(event.getEventDay() == eventDay && event.getEventMonth() == eventMonth && event.getEventYear() == eventYear)
+            {
+
+            }
+        }
+
         ListView list;
-//
+
         CustomListAdapter adapter = new CustomListAdapter(getActivity(), events);
         list =(ListView)layout.findViewById(android.R.id.list);
         list.setAdapter(adapter);
