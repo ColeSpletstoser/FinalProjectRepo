@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
 
     ArrayList<EventClass> events;
     ArrayList<EventClass> savedEvents;
+    Set<String> eventSet;
 
     Fragment switchable;
 
