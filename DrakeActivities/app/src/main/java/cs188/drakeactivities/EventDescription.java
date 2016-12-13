@@ -18,6 +18,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 import java.util.Calendar;
 
 
@@ -42,9 +44,10 @@ public class EventDescription extends Fragment {
         //final int eventTime = getArguments().getInt("eventTime", 0);
 
         ImageView image = (ImageView) v.findViewById(R.id.imageView);
-        Button enter = (Button) v.findViewById(R.id.enterCode);
+        final Button enter = (Button) v.findViewById(R.id.enterCode);
         TextView titleText = (TextView) v.findViewById(R.id.EventTitle);
         TextView descText = (TextView) v.findViewById(R.id.Description);
+        final TextView pointsAwarded = (TextView) v.findViewById((R.id.pointsAwarded));
 
         titleText.setText(eventTitle);
         descText.setText(eventDescription);
@@ -96,7 +99,8 @@ public class EventDescription extends Fragment {
                     ((MainActivity)getActivity()).addPoints(100);
 
                     int points = ((MainActivity)getActivity()).getPoints();
-
+                    enter.setVisibility(View.GONE);
+                    pointsAwarded.setVisibility(View.VISIBLE);
                     FragmentTransaction trans = getFragmentManager()
                             .beginTransaction();
 
@@ -108,10 +112,9 @@ public class EventDescription extends Fragment {
                     ProfileFragment.setArguments(args);
 
                     trans.replace(R.id.holder2, ProfileFragment);
-                    //trans.addToBackStack(null);
                     trans.commit();
 //                }
-                Intent intent = new Intent();
+
             }
         });
 
