@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         proj2.setEventTitle("Christmas Dinner");
         proj2.setOrganizationUsername("Sodexo");
         proj2.setEventTime("5:00 - 7:00 pm");
-        proj2.setEventDay(14);
+        proj2.setEventDay(13);
         proj2.setEventMonth(12);
         proj2.setEventYear(2016);
         proj2.setEventDescription("Join us for a delicious Christmas dinner this Wednesday.");
@@ -306,7 +306,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         userPoints += pts;
     }
 
-    public int getUserPoints()
+    public int getPoints()
     {
         return userPoints;
     }

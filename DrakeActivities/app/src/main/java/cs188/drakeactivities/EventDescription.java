@@ -88,15 +88,15 @@ public class EventDescription extends Fragment {
                 Toast.makeText(getActivity(), String.valueOf(userLocation[1]), Toast.LENGTH_SHORT).show();
 
                 eventCode = code.getText().toString();
-                int duration = Toast.LENGTH_SHORT;
-                Context context = getActivity();
-                Toast toast = Toast.makeText(context, eventCode, duration);
-                toast.show();
+                //int duration = Toast.LENGTH_SHORT;
+                //Context context = getActivity();
+                //Toast toast = Toast.makeText(context, eventCode, duration);
+                //toast.show();
 
 //                if(eventCode.equals(checkCode))
 //                {
-//                    MainActivity.userPoints
-//                }
+                    ((MainActivity)getActivity()).addPoints(100);
+               // }
 
             }
         });

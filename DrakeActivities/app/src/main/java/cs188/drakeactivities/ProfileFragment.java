@@ -20,12 +20,21 @@ public class ProfileFragment extends Fragment {
         View layout = inflater.inflate(R.layout.profile_fragment, container, false);
 
         //do work here
+        String total = "/1000 points";
+        String current;
 
         ImageView profPic = (ImageView) layout.findViewById(R.id.profPic);
         TextView name = (TextView) layout.findViewById(R.id.name);
         TextView email = (TextView) layout.findViewById(R.id.email);
         ProgressBar progress = (ProgressBar) layout.findViewById(R.id.progress);
         TextView points = (TextView) layout.findViewById(R.id.points);
+
+        int pts = ((MainActivity)getActivity()).getPoints();
+        progress.setProgress(pts);
+
+        current = Integer.toString(pts);
+        total = current + total;
+        points.setText(total);
 
         return layout;
     }
