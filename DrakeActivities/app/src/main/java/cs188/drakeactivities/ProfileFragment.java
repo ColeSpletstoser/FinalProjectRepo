@@ -42,13 +42,28 @@ public class ProfileFragment extends Fragment {
         total = current + total;
         points.setText(total);
 
-        final ArrayList<EventClass> savedEvents = ((MainActivity)getActivity()).getSavedEvents();
+        final ArrayList<EventClass> events = ((MainActivity)getActivity()).events;
+
+        final ArrayList<Integer> savedEvents = ((MainActivity)getActivity()).getSavedEvents();
+
+        final ArrayList<EventClass> listEvents = new ArrayList<EventClass>();
+
+        for (EventClass event: events)
+        {
+            for(int id: savedEvents)
+            {
+                if(event.getEventID() == id)
+                {
+                    listEvents.add(event);
+                }
+            }
+        }
 
         if(savedEvents != null && !savedEvents.isEmpty())
         {
             ListView list;
 
-            CustomListAdapter adapter = new CustomListAdapter(getActivity(), savedEvents);
+            CustomListAdapter adapter = new CustomListAdapter(getActivity(), listEvents);
             list =(ListView)layout.findViewById(android.R.id.list);
             list.setAdapter(adapter);
 
@@ -61,17 +76,17 @@ public class ProfileFragment extends Fragment {
 
                     Bundle args = new Bundle();
 
-                    args.putString("eventTitle", savedEvents.get(position).getEventTitle());
-                    args.putString("eventDescription", savedEvents.get(position).getEventDescription());
-                    args.putInt("eventYear", savedEvents.get(position).getEventYear());
-                    args.putInt("eventMonth", savedEvents.get(position).getEventMonth());
-                    args.putInt("eventDay", savedEvents.get(position).getEventDay());
-                    args.putString("eventTime", savedEvents.get(position).getEventTime());
-                    args.putString("eventTitle", savedEvents.get(position).getEventTitle());
-                    args.putInt("eventIcon", savedEvents.get(position).getEventIcon());
-                    args.putDouble("longitude", savedEvents.get(position).getLongitude());
-                    args.putDouble("latitude", savedEvents.get(position).getLatitude());
-                    args.putString("eventCode", savedEvents.get(position).getEventCode());
+                    args.putString("eventTitle", listEvents.get(position).getEventTitle());
+                    args.putString("eventDescription", listEvents.get(position).getEventDescription());
+                    args.putInt("eventYear", listEvents.get(position).getEventYear());
+                    args.putInt("eventMonth", listEvents.get(position).getEventMonth());
+                    args.putInt("eventDay", listEvents.get(position).getEventDay());
+                    args.putString("eventTime", listEvents.get(position).getEventTime());
+                    args.putString("eventTitle", listEvents.get(position).getEventTitle());
+                    args.putInt("eventIcon", listEvents.get(position).getEventIcon());
+                    args.putDouble("longitude", listEvents.get(position).getLongitude());
+                    args.putDouble("latitude", listEvents.get(position).getLatitude());
+                    args.putString("eventCode", listEvents.get(position).getEventCode());
                     eventDescription.setArguments(args);
 
                     trans.replace(R.id.holder2, eventDescription);

@@ -63,14 +63,7 @@ public class EventDescription extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ArrayList<EventClass> events = ((MainActivity)getActivity()).events;
-                for (EventClass event: events)
-                {
-                    if(event.getEventID() == eventID)
-                    {
-                        ((MainActivity)getActivity()).addSavedEvent(event);
-                    }
-                }
+                ((MainActivity)getActivity()).addSavedEvent(eventID);
 
                 int points = ((MainActivity)getActivity()).getPoints();
                 FragmentTransaction trans = getFragmentManager()

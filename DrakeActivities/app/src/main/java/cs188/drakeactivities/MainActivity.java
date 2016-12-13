@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     public int userPoints = 0;
 
     ArrayList<EventClass> events;
-    ArrayList<EventClass> savedEvents;
+    ArrayList<Integer> savedEvents;
     Set<String> eventSet;
 
     Fragment switchable;
@@ -368,12 +368,12 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
 
     public int getPoints() { return userPoints; }
 
-    public void addSavedEvent(EventClass event)
+    public void addSavedEvent(int eventID)
     {
-        savedEvents.add(event);
+        savedEvents.add(eventID);
     }
 
-    public ArrayList<EventClass> getSavedEvents() { return savedEvents; }
+    public ArrayList<Integer> getSavedEvents() { return savedEvents; }
 
     private class CustomAdapter extends FragmentStatePagerAdapter {
 
