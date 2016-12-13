@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     public int userPoints = 0;
 
     ArrayList<EventClass> events;
-    protected ArrayList<EventClass> savedEvents;
+    ArrayList<EventClass> savedEvents;
 
     Fragment switchable;
 
@@ -134,6 +134,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         proj1.setLongitude(41.6036036);
         proj1.setLatitude(-93.6374793);
         proj1.setEventCode("DRAKE");
+        proj1.setEventID(1);
 
         proj2.setEventTitle("Christmas Dinner");
         proj2.setOrganizationUsername("Sodexo");
@@ -147,6 +148,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         proj2.setLongitude(41.6036036);
         proj2.setLatitude(-93.6374793);
         proj2.setEventCode("DRAKE");
+        proj2.setEventID(2);
 
         proj3.setEventTitle("Snowman Building Contest");
         proj3.setOrganizationUsername("SAB");
@@ -160,6 +162,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         proj3.setLongitude(41.6036036);
         proj3.setLatitude(-93.6374793);
         proj3.setEventCode("DRAKE");
+        proj3.setEventID(3);
 
         proj4.setEventTitle("Squirrel Watching");
         proj4.setOrganizationUsername("Drake University");
@@ -173,6 +176,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         proj4.setLongitude(41.6036036);
         proj4.setLatitude(-93.6374793);
         proj4.setEventCode("DRAKE");
+        proj4.setEventID(4);
 
         proj5.setEventTitle("Speed Dating");
         proj5.setOrganizationUsername("SAB");
@@ -186,6 +190,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         proj5.setLongitude(41.6036036);
         proj5.setLatitude(-93.6374793);
         proj5.setEventCode("DRAKE");
+        proj5.setEventID(5);
 
         proj6.setEventTitle("Blood Drive");
         proj6.setOrganizationUsername("Drake University/Blood America");
@@ -199,6 +204,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         proj6.setLongitude(41.6036036);
         proj6.setLatitude(-93.6374793);
         proj6.setEventCode("DRAKE");
+        proj6.setEventID(6);
 
         proj7.setEventTitle("Arm-wrestling tournament");
         proj7.setOrganizationUsername("SAB");
@@ -212,6 +218,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         proj7.setLongitude(41.6036036);
         proj7.setLatitude(-93.6374793);
         proj7.setEventCode("DRAKE");
+        proj7.setEventID(7);
 
         events = new ArrayList<EventClass>();
         events.add(proj1);
@@ -221,9 +228,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         events.add(proj5);
         events.add(proj6);
         events.add(proj7);
-
-
-
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -343,6 +347,13 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     }
 
     public int getPoints() { return userPoints; }
+
+    public void addSavedEvent(EventClass event)
+    {
+        savedEvents.add(event);
+    }
+
+    public ArrayList<EventClass> getSavedEvents() { return savedEvents; }
 
     private class CustomAdapter extends FragmentStatePagerAdapter {
 

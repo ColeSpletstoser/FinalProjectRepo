@@ -6,6 +6,7 @@ package cs188.drakeactivities;
 
 public class EventClass
 {
+    private int eventID;
     private String eventTitle;
     private String organizationUsername;
     private String eventTime;
@@ -102,5 +103,13 @@ public class EventClass
 
     public void setEventIcon(int icon) {
         this.eventIcon = icon;
+    }
+
+    public int getEventID() {
+        return eventID;
+    }
+
+    public void setEventID(int eventID) {
+        this.eventID = eventID;
     }
 }
