@@ -59,12 +59,12 @@ public class ProfileFragment extends Fragment {
             }
         }
 
-        if(savedEvents != null && !savedEvents.isEmpty())
+        if(listEvents != null && !listEvents.isEmpty())
         {
             ListView list;
 
             CustomListAdapter adapter = new CustomListAdapter(getActivity(), listEvents);
-            list =(ListView)layout.findViewById(android.R.id.list);
+            list =(ListView)layout.findViewById(R.id.savedEvents);
             list.setAdapter(adapter);
 
             list.setOnItemClickListener(new AdapterView.OnItemClickListener() {

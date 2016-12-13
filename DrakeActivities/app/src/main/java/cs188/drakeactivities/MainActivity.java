@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     public int userPoints = 0;
 
     ArrayList<EventClass> events;
-    ArrayList<Integer> savedEvents;
+    public ArrayList<Integer> savedEvents = new ArrayList<Integer>();
     Set<String> eventSet;
 
     Fragment switchable;
@@ -291,10 +291,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         //add things here. ArrayList needs to be converted to a set to be saved,
         //and converted back to be called
 
-        for(int i = 0; i < savedEvents.size(); i++)
-        {
-            eventSet.add(Integer.toString(savedEvents.get(i)));
-        }
+//        for(int i = 0; i < savedEvents.size(); i++)
+//        {
+//            eventSet.add(Integer.toString(savedEvents.get(i)));
+//        }
 
         //points, isloggedin,
 
