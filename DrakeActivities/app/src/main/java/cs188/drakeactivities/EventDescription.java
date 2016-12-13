@@ -108,7 +108,7 @@ public class EventDescription extends Fragment {
                     ProfileFragment.setArguments(args);
 
                     trans.replace(R.id.holder2, ProfileFragment);
-                    trans.addToBackStack(null);
+                    //trans.addToBackStack(null);
                     trans.commit();
 //                }
                 Intent intent = new Intent();
