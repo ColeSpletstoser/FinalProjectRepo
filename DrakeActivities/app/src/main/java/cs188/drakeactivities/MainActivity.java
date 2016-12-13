@@ -293,8 +293,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
 
         for(int i = 0; i < savedEvents.size(); i++)
         {
-            //eventSet.add()
+            eventSet.add(Integer.toString(savedEvents.get(i)));
         }
+
+        //points, isloggedin,
 
         editor.commit();
     }
