@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CalendarView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -43,6 +44,8 @@ public class CalendarFragment extends Fragment {
                     }
                 }
                 if (dayEvents == null || dayEvents.isEmpty()){
+                    Toast toast = Toast.makeText(getActivity(), "No events on this date :(", Toast.LENGTH_SHORT);
+                    toast.show();
                     return;
                 }
 

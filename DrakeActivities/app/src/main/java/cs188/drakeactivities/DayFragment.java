@@ -85,14 +85,14 @@ public class DayFragment extends Fragment {
 
                 Bundle args = new Bundle();
 
-                args.putString("eventTitle", events.get(position).getEventTitle());
-                args.putString("eventDescription", events.get(position).getEventDescription());
+                args.putString("eventTitle", dayEvents.get(position).getEventTitle());
+                args.putString("eventDescription", dayEvents.get(position).getEventDescription());
                 args.putInt("eventYear", eventYear);
                 args.putInt("eventMonth", eventMonth);
                 args.putInt("eventDay", eventDay);
-                args.putString("eventTime", events.get(position).getEventTime());
-                args.putString("eventTitle", events.get(position).getEventTitle());
-                args.putInt("eventIcon", events.get(position).getEventIcon());
+                args.putString("eventTime", dayEvents.get(position).getEventTime());
+                args.putString("eventTitle", dayEvents.get(position).getEventTitle());
+                args.putInt("eventIcon", dayEvents.get(position).getEventIcon());
                 eventDescription.setArguments(args);
 
                 trans.replace(R.id.holder1, eventDescription);
