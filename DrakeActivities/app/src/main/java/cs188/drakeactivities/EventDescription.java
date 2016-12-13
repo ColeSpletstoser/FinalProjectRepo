@@ -25,20 +25,31 @@ public class EventDescription extends Fragment {
     String eventCode;
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v =  inflater.inflate(R.layout.fragment_event_description, container, false);
-        String eventTitle, eventDesc;
+
+
+
+       final int eventYear = getArguments().getInt("eventYear", 0);
+       final int eventDay = getArguments().getInt("eventDay", 0);
+        final int eventMonth = getArguments().getInt("eventMonth", 0);
+        final String eventTitle = getArguments().getString("eventTitle", "");
+        final String eventDescription = getArguments().getString("eventDescription", "");
+        final int eventIcon = getArguments().getInt("eventIcon", 0);
+
         ImageView image = (ImageView) v.findViewById(R.id.imageView);
         Button enter = (Button) v.findViewById(R.id.enterCode);
         TextView titleText = (TextView) v.findViewById(R.id.EventTitle);
         TextView descText = (TextView) v.findViewById(R.id.Description);
 
-        eventTitle = "Tommy";
-        eventDesc = "Tommy";
 
         titleText.setText(eventTitle);
-        descText.setText(eventDesc);
+        descText.setText(eventDescription);
+        
 
 
-        //image.setImageResource(R.drawable.imagename) for setting the image in the top
+
+
+
+        //image.setImageResource(R.drawable.eventIcon);
 
 
         final EditText code = (EditText) v.findViewById(R.id.eventCode);
