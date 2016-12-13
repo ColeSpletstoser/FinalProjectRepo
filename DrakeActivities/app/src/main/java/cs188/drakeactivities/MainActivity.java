@@ -226,7 +226,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         proj7.setEventYear(2016);
         proj7.setEventDescription("Think you got what it takes to be the arm-wrestling champ of Drake University? – Then join us at 7:00 pm in Upper Olmsted. Tables will be provided.");
         proj7.setEventCode("EgoDeflater5000");
-        proj7.setEventIcon(R.drawable.armwhrestler);
+        proj7.setEventIcon(R.mipmap.armwrestle);
         proj7.setLongitude(41.6036036);
         proj7.setLatitude(-93.6374793);
         proj7.setEventCode("DRAKE");
