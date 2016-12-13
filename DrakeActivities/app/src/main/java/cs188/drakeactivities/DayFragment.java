@@ -30,9 +30,18 @@ public class DayFragment extends ListFragment {
 
 //        dayTextView = (TextView) layout.findViewById(R.id.dayTextView);
 
+<<<<<<< Updated upstream
         final int eventYear = getArguments().getInt("eventYear", 0);
         final int eventDay = getArguments().getInt("eventDay", 0);
         final int eventMonth = getArguments().getInt("eventMonth", 0);
+=======
+        int eventYear = getArguments().getInt("eventYear", 0);
+        int eventDay = getArguments().getInt("eventDay", 0);
+        int eventMonth = getArguments().getInt("eventMonth", 0);
+        String eventTitle = getArguments().getString("eventTitle", "");
+        String eventDescription = getArguments().getString("eventDescription", "");
+        int eventIcon = getArguments().getInt("eventIcon", 0);
+>>>>>>> Stashed changes
 
 //        dayTextView.append(" ");
 //        dayTextView.append(String.valueOf(eventMonth));
