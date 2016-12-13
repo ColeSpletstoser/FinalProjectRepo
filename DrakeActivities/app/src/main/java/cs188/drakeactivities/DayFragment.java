@@ -70,7 +70,7 @@ public class DayFragment extends Fragment {
 
         ListView list;
 
-        CustomListAdapter adapter = new CustomListAdapter(getActivity(), events);
+        CustomListAdapter adapter = new CustomListAdapter(getActivity(), dayEvents);
         list =(ListView)layout.findViewById(android.R.id.list);
         list.setAdapter(adapter);
 
