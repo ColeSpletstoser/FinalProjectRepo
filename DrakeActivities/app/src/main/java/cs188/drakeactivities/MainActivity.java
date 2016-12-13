@@ -37,12 +37,13 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     private TabLayout tabLayout;
     public CustomAdapter adapter;
     public FragmentManager mFragmentManager;
-
+    public static final String PREFS_NAME = "DrakeActivities";
 
     //make shared preference to store user points. Placeholder for now
     public int userPoints = 0;
 
     ArrayList<EventClass> events;
+    protected ArrayList<EventClass> savedEvents;
 
     Fragment switchable;
 
