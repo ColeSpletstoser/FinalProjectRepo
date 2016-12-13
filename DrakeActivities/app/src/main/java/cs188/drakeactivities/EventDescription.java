@@ -97,7 +97,7 @@ public class EventDescription extends Fragment {
 //                {
                     ((MainActivity)getActivity()).addPoints(100);
                // }
-
+                Intent intent = new Intent();
             }
         });
 

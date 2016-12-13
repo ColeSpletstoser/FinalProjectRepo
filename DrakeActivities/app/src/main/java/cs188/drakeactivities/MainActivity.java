@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
 
 
     //make shared preference to store user points. Placeholder for now
-    protected int userPoints = 0;
+    public int userPoints = 0;
 
     ArrayList<EventClass> events;
 
@@ -317,13 +317,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
 
     public void addPoints(int pts)
     {
-        userPoints += pts;
+        userPoints =  userPoints + pts;
     }
 
-    public int getPoints()
-    {
-        return userPoints;
-    }
+    public int getPoints() { return userPoints; }
 
     private class CustomAdapter extends FragmentStatePagerAdapter {
 
