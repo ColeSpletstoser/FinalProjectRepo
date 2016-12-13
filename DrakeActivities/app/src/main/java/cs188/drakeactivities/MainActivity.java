@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     public ArrayList<Integer> savedEvents = new ArrayList<Integer>();
     Set<String> eventSet = new HashSet<>(100);
 
-    boolean isLoggedIn;
+    public boolean isLoggedIn;
 
     Fragment switchable;
 
@@ -63,6 +63,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         adapter = new CustomAdapter(getSupportFragmentManager(), getApplicationContext());
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+
+        isLoggedIn = settings.getBoolean("isLoggedIn", false);
+        userPoints = settings.getInt("points", 0);
+        eventSet = settings.getStringSet("eventSet", null);
 
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         tabLayout.addTab(tabLayout.newTab().setText("Today"));
@@ -300,10 +304,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         //add things here. ArrayList needs to be converted to a set to be saved,
         //and converted back to be called
 
-//        for(int i = 0; i < savedEvents.size(); i++)
-//        {
-//            eventSet.add(Integer.toString(savedEvents.get(i)));
-//        }
+        for(int i = 0; i < savedEvents.size(); i++)
+        {
+            eventSet.add(Integer.toString(savedEvents.get(i)));
+        }
 
         //points, isloggedin,
 
