@@ -113,8 +113,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                     .build();
         }
 
-
-
         EventClass proj1 = new EventClass();
         EventClass proj2 = new EventClass();
         EventClass proj3 = new EventClass();
@@ -126,12 +124,15 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         proj1.setEventTitle("Drake MBB vs Iona University");
         proj1.setOrganizationUsername("Drake Athletics");
         proj1.setEventTime("2:05 pm");
-        proj1.setEventDay(29);
+        proj1.setEventDay(20);
         proj1.setEventMonth(12);
         proj1.setEventYear(2016);
         proj1.setEventDescription("Come to the Knapp and support the Drake Men’s Basketball as they take on Iona!");
         proj1.setEventCode("SportsGoSports");
         proj1.setEventIcon(R.drawable.drake_basketball);
+        proj1.setLongitude(41.6036036);
+        proj1.setLatitude(-93.6374793);
+        proj1.setEventCode("DRAKE");
 
         proj2.setEventTitle("Christmas Dinner");
         proj2.setOrganizationUsername("Sodexo");
@@ -142,6 +143,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         proj2.setEventDescription("Join us for a delicious Christmas dinner this Wednesday.");
         proj2.setEventCode("XmasYumYum");
         proj2.setEventIcon(R.drawable.christmas_dinner);
+        proj2.setLongitude(41.6036036);
+        proj2.setLatitude(-93.6374793);
+        proj2.setEventCode("DRAKE");
 
         proj3.setEventTitle("Snowman Building Contest");
         proj3.setOrganizationUsername("SAB");
@@ -152,6 +156,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         proj3.setEventDescription("Come build your best snowman, and see how you fare against other students. President Martin will be there to judge the snowmen.");
         proj3.setEventCode("FrostyTheSnowBulldog");
         proj3.setEventIcon(R.drawable.snowman_building);
+        proj3.setLongitude(41.6036036);
+        proj3.setLatitude(-93.6374793);
+        proj3.setEventCode("DRAKE");
 
         proj4.setEventTitle("Squirrel Watching");
         proj4.setOrganizationUsername("Drake University");
@@ -162,36 +169,48 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         proj4.setEventDescription("Bring your friends, phones, and nuts as we gather to watch the squirrel in its natural habitat! Hand feed at your own risk.");
         proj4.setEventCode("FriendsPhonesNuts");
         proj4.setEventIcon(R.drawable.squirrel_watching);
+        proj4.setLongitude(41.6036036);
+        proj4.setLatitude(-93.6374793);
+        proj4.setEventCode("DRAKE");
 
         proj5.setEventTitle("Speed Dating");
         proj5.setOrganizationUsername("SAB");
         proj5.setEventTime("8:00 pm");
-        proj5.setEventDay(14);
-        proj5.setEventMonth(2);
-        proj5.setEventYear(2017);
+        proj5.setEventDay(15);
+        proj5.setEventMonth(12);
+        proj5.setEventYear(2016);
         proj5.setEventDescription("Don’t have any plans on Valentines day? Are you forever alone? Then come to Upper Olmsted and join us as we try to match students through 2 minutes speed dates! Dress to impress.");
         proj5.setEventCode("Sad-N-Lonely");
         proj5.setEventIcon(R.drawable.maxresdefault);
+        proj5.setLongitude(41.6036036);
+        proj5.setLatitude(-93.6374793);
+        proj5.setEventCode("DRAKE");
 
         proj6.setEventTitle("Blood Drive");
         proj6.setOrganizationUsername("Drake University/Blood America");
         proj6.setEventTime("9:00 am – 5:00 pm");
-        proj6.setEventDay(1);
+        proj6.setEventDay(18);
         proj6.setEventMonth(12);
         proj6.setEventYear(2017);
         proj6.setEventDescription("Come to blood mobile and donate your blood! – No vampires here.");
         proj6.setEventCode("TeamEdward");
         proj6.setEventIcon(R.drawable.blooddrive);
+        proj6.setLongitude(41.6036036);
+        proj6.setLatitude(-93.6374793);
+        proj6.setEventCode("DRAKE");
 
         proj7.setEventTitle("Arm-wrestling tournament");
         proj7.setOrganizationUsername("SAB");
         proj7.setEventTime("7:00 pm");
         proj7.setEventDay(20);
-        proj7.setEventMonth(1);
-        proj7.setEventYear(2017);
+        proj7.setEventMonth(12);
+        proj7.setEventYear(2016);
         proj7.setEventDescription("Think you got what it takes to be the arm-wrestling champ of Drake University? – Then join us at 7:00 pm in Upper Olmsted. Tables will be provided.");
         proj7.setEventCode("EgoDeflater5000");
         proj7.setEventIcon(R.drawable.armwhrestler);
+        proj7.setLongitude(41.6036036);
+        proj7.setLatitude(-93.6374793);
+        proj7.setEventCode("DRAKE");
 
         events = new ArrayList<EventClass>();
         events.add(proj1);
@@ -201,6 +220,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         events.add(proj5);
         events.add(proj6);
         events.add(proj7);
+
+
 
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
