@@ -52,9 +52,14 @@ public class LogInFragment extends Fragment {
                     FragmentTransaction trans = getFragmentManager()
                             .beginTransaction();
 
-                    Fragment profileFragment = new ProfileFragment();
-                    trans.replace(R.id.holder2, profileFragment);
-                    trans.addToBackStack(null);
+                    Fragment ProfileFragment = new ProfileFragment();
+
+                    Bundle args = new Bundle();
+
+                    args.putInt("points", 0);
+                    ProfileFragment.setArguments(args);
+
+                    trans.replace(R.id.holder2, ProfileFragment);
                     trans.commit();
                 }
             }
