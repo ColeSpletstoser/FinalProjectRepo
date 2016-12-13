@@ -5,6 +5,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
@@ -28,6 +29,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
 
 import java.util.ArrayList;
+import java.util.Set;
 
 public class MainActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener{
 
@@ -43,7 +45,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     public int userPoints = 0;
 
     ArrayList<EventClass> events;
-    protected ArrayList<EventClass> savedEvents;
+    Set<String> eventSet;
+    ArrayList<EventClass> savedEvents;
 
     Fragment switchable;
 
@@ -55,6 +58,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         switchable = new FirstFragment();
 
         adapter = new CustomAdapter(getSupportFragmentManager(), getApplicationContext());
+
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         tabLayout.addTab(tabLayout.newTab().setText("Today"));
@@ -275,6 +280,19 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     protected void onStop() {
         mGoogleApiClient.disconnect();
         super.onStop();
+
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        SharedPreferences.Editor editor = settings.edit();
+
+        //add things here. ArrayList needs to be converted to a set to be saved,
+        //and converted back to be called
+
+        for(int i = 0; i < savedEvents.size(); i++)
+        {
+            //eventSet.add()
+        }
+
+        editor.commit();
     }
 
     @Override
