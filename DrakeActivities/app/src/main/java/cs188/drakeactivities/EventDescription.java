@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 
@@ -40,6 +41,7 @@ public class EventDescription extends Fragment {
         final double longitude = getArguments().getDouble("longitude", 0);
         final double latitude = getArguments().getDouble("latitude", 0);
         final String eventCode = getArguments().getString("eventCode", "");
+        final int eventID = getArguments().getInt("eventID", 0);
 
         //final int eventTime = getArguments().getInt("eventTime", 0);
 
@@ -61,6 +63,29 @@ public class EventDescription extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ArrayList<EventClass> events = ((MainActivity)getActivity()).events;
+                for (EventClass event: events)
+                {
+                    if(event.getEventID() == eventID)
+                    {
+                        ((MainActivity)getActivity()).addSavedEvent(event);
+                    }
+                }
+
+                int points = ((MainActivity)getActivity()).getPoints();
+                FragmentTransaction trans = getFragmentManager()
+                        .beginTransaction();
+
+                Fragment ProfileFragment = new ProfileFragment();
+
+                Bundle args = new Bundle();
+
+                args.putInt("points", points);
+                ProfileFragment.setArguments(args);
+
+                trans.replace(R.id.holder2, ProfileFragment);
+                trans.commit();
+
                 //int duration = Toast.LENGTH_SHORT;
                 Context context = getActivity();
                 //Toast toast = Toast.makeText(context, "Saved event to calendar", duration);
@@ -114,7 +139,6 @@ public class EventDescription extends Fragment {
                     trans.replace(R.id.holder2, ProfileFragment);
                     trans.commit();
                 }
-
             }
         });
 

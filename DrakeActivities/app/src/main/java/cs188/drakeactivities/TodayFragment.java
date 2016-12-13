@@ -82,6 +82,7 @@ public class TodayFragment extends Fragment {
                     args.putDouble("longitude", dayEvents.get(position).getLongitude());
                     args.putDouble("latitude", dayEvents.get(position).getLatitude());
                     args.putString("eventCode", dayEvents.get(position).getEventCode());
+                    args.putInt("eventID", dayEvents.get(position).getEventID());
                     eventDescription.setArguments(args);
 
                     trans.replace(R.id.holder, eventDescription);
