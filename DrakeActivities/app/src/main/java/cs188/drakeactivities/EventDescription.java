@@ -26,7 +26,7 @@ public class EventDescription extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v =  inflater.inflate(R.layout.fragment_event_description, container, false);
 
-
+        final String checkCode = "DRAKE";
 
        final int eventYear = getArguments().getInt("eventYear", 0);
        final int eventDay = getArguments().getInt("eventDay", 0);
@@ -92,6 +92,11 @@ public class EventDescription extends Fragment {
                 Context context = getActivity();
                 Toast toast = Toast.makeText(context, eventCode, duration);
                 toast.show();
+
+//                if(eventCode.equals(checkCode))
+//                {
+//                    MainActivity.userPoints
+//                }
 
             }
         });

@@ -38,6 +38,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     public CustomAdapter adapter;
     public FragmentManager mFragmentManager;
 
+
+    //make shared preference to store user points. Placeholder for now
+    protected int userPoints = 0;
+
     ArrayList<EventClass> events;
 
     Fragment switchable;
@@ -295,9 +299,16 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
             userLocation[1] = mLastLocation.getLongitude();
         }
         return userLocation;
+    }
 
-        //Toast.makeText(this, String.valueOf(userLocation[0]), Toast.LENGTH_SHORT).show();
-        //Toast.makeText(this, String.valueOf(userLocation[1]), Toast.LENGTH_SHORT).show();
+    public void addPoints(int pts)
+    {
+        userPoints += pts;
+    }
+
+    public int getUserPoints()
+    {
+        return userPoints;
     }
 
     private class CustomAdapter extends FragmentStatePagerAdapter {
