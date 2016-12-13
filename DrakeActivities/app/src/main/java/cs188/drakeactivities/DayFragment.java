@@ -81,8 +81,6 @@ public class DayFragment extends Fragment {
 
                 Fragment eventDescription = new EventDescription();
 
-                //title, desc, date, time, pic
-
                 Bundle args = new Bundle();
 
                 args.putString("eventTitle", dayEvents.get(position).getEventTitle());
@@ -95,6 +93,7 @@ public class DayFragment extends Fragment {
                 args.putInt("eventIcon", dayEvents.get(position).getEventIcon());
                 args.putDouble("longitude", dayEvents.get(position).getLongitude());
                 args.putDouble("latitude", dayEvents.get(position).getLatitude());
+                args.putString("eventCode", dayEvents.get(position).getEventCode());
                 eventDescription.setArguments(args);
 
                 trans.replace(R.id.holder1, eventDescription);

@@ -26,16 +26,16 @@ public class EventDescription extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v =  inflater.inflate(R.layout.fragment_event_description, container, false);
 
-        final String checkCode = "DRAKE";
-
-       final int eventYear = getArguments().getInt("eventYear", 0);
-       final int eventDay = getArguments().getInt("eventDay", 0);
+        final int eventYear = getArguments().getInt("eventYear", 0);
+        final int eventDay = getArguments().getInt("eventDay", 0);
         final int eventMonth = getArguments().getInt("eventMonth", 0);
         final String eventTitle = getArguments().getString("eventTitle", "");
         final String eventDescription = getArguments().getString("eventDescription", "");
         final int eventIcon = getArguments().getInt("eventIcon", 0);
         final double longitude = getArguments().getDouble("longitude", 0);
         final double latitude = getArguments().getDouble("latitude", 0);
+        final String eventCode = getArguments().getString("eventCode", "");
+
         //final int eventTime = getArguments().getInt("eventTime", 0);
 
         ImageView image = (ImageView) v.findViewById(R.id.imageView);
@@ -43,18 +43,10 @@ public class EventDescription extends Fragment {
         TextView titleText = (TextView) v.findViewById(R.id.EventTitle);
         TextView descText = (TextView) v.findViewById(R.id.Description);
 
-
         titleText.setText(eventTitle);
         descText.setText(eventDescription);
 
-
-
-
-
-
-
         image.setImageResource(eventIcon);
-
 
         final EditText code = (EditText) v.findViewById(R.id.eventCode);
 
@@ -94,13 +86,13 @@ public class EventDescription extends Fragment {
 
                 //Toast.makeText(getActivity(), String.valueOf(dist), Toast.LENGTH_SHORT).show();
 
-                eventCode = code.getText().toString();
+                String userInput = code.getText().toString();
                 //int duration = Toast.LENGTH_SHORT;
                 //Context context = getActivity();
-                //Toast toast = Toast.makeText(context, eventCode, duration);
+                //Toast toast = Toast.makeText(context, userInput, duration);
                 //toast.show();
 
-//                if(eventCode.equals(checkCode))
+//                if(userInput.equals(eventCode) && dist <= 250) //can change 250 to whatever radius preferred
 //                {
                     ((MainActivity)getActivity()).addPoints(100);
                // }
