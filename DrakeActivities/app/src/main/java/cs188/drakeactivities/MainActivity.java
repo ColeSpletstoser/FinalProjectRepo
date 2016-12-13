@@ -142,6 +142,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         proj2.setEventDescription("Join us for a delicious Christmas dinner this Wednesday.");
         proj2.setEventCode("XmasYumYum");
         proj2.setEventIcon(R.drawable.christmas_dinner);
+        proj2.setLongitude(41.6036036);
+        proj2.setLatitude(-93.6374793);
 
         proj3.setEventTitle("Snowman Building Contest");
         proj3.setOrganizationUsername("SAB");
@@ -201,6 +203,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         events.add(proj5);
         events.add(proj6);
         events.add(proj7);
+
+
 
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
