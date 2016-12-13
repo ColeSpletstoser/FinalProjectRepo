@@ -262,6 +262,12 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                         mFragmentManager.popBackStack();
                     }
                 }
+                else if (tab.getPosition() == 2)
+                {
+                    if (mFragmentManager.getBackStackEntryCount() > 0){
+                        mFragmentManager.popBackStack();
+                    }
+                }
             }
         });
     }
