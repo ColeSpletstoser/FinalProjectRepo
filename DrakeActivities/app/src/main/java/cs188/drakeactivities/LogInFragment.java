@@ -53,7 +53,7 @@ public class LogInFragment extends Fragment {
                             .beginTransaction();
 
                     Fragment profileFragment = new ProfileFragment();
-                    trans.replace(R.id.holder1, profileFragment);
+                    trans.replace(R.id.holder2, profileFragment);
                     trans.addToBackStack(null);
                     trans.commit();
                 }
