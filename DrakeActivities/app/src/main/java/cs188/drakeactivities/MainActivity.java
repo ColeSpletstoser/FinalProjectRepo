@@ -49,7 +49,15 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     public ArrayList<Integer> savedEvents = new ArrayList<Integer>();
     Set<String> eventSet = new HashSet<>(100);
 
-    public boolean isLoggedIn;
+    public boolean isLoggedIn() {
+        return isLoggedIn;
+    }
+
+    public void setLoggedIn(boolean loggedIn) {
+        isLoggedIn = loggedIn;
+    }
+
+    public boolean isLoggedIn = false;
 
     Fragment switchable;
 
@@ -429,6 +437,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
             return 3;
         }
     }
+
+
 
 
 }
