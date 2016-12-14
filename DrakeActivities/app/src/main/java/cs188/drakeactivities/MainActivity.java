@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
 
     ArrayList<EventClass> events;
     public ArrayList<Integer> savedEvents = new ArrayList<Integer>();
-    Set<String> eventSet = new HashSet<>(100);
+    Set<String> eventSet = new HashSet<String>();
 
     public boolean isLoggedIn() {
         return isLoggedIn;
