@@ -39,6 +39,7 @@ public class LogInFragment extends Fragment {
 
                 if(user.equals(fakeUser) && pass.equals(fakePass))
                 {
+                    ((MainActivity)getActivity()).setLoggedIn(true);
                     FragmentTransaction trans = getFragmentManager()
                             .beginTransaction();
 

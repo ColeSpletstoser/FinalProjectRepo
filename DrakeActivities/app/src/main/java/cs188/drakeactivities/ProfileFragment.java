@@ -74,8 +74,6 @@ public class ProfileFragment extends Fragment {
 
                     Fragment eventDescription = new EventDescription();
 
-                    ((MainActivity)getActivity()).setLoggedIn(true);
-
                     Bundle args = new Bundle();
 
                     args.putString("eventTitle", listEvents.get(position).getEventTitle());
