@@ -75,6 +75,12 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         isLoggedIn = settings.getBoolean("isLoggedIn", false);
         userPoints = settings.getInt("points", 0);
         eventSet = settings.getStringSet("eventSet", null);
+        ArrayList<String> temp = new ArrayList<String>(eventSet);
+
+        for(String id: temp)
+        {
+            savedEvents.add(Integer.parseInt(id));
+        }
 
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         tabLayout.addTab(tabLayout.newTab().setText("Today"));
