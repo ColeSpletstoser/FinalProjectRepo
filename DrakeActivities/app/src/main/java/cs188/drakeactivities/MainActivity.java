@@ -416,8 +416,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
             mFragmentManager = supportFragmentManager;
         }
 
-        public boolean userHasAccount = true;
-
         @Override
         public Fragment getItem(int position) {
             switch (position){
@@ -426,10 +424,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                 case 1:
                     return new SecondFragment();
                 case 2:
-//                    if(userHasAccount) //change to check for if the user has an account
-//                        return new ProfileFragment();
-//                    else
-//                        return new LogInFragment();
                     return new ThirdFragment();
                 default:
                     return null;
