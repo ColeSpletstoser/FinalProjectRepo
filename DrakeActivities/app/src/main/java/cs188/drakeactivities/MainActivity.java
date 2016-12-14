@@ -23,6 +23,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -72,17 +73,23 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 
-        if(isLoggedIn)
+        if(!settings.contains("isLoggedIn"))
         {
+            Toast.makeText(getApplicationContext(), "isNotLoggedIn", Toast.LENGTH_SHORT);
+        }
+
+        if(settings.contains("isLoggedIn"))
+        {
+            Toast.makeText(getApplicationContext(), "isLoggedIn", Toast.LENGTH_SHORT);
             isLoggedIn = settings.getBoolean("isLoggedIn", false);
             userPoints = settings.getInt("points", 0);
             eventSet = settings.getStringSet("eventSet", null);
-            ArrayList<String> temp = new ArrayList<String>(eventSet);
-
-            for(String id: temp)
-            {
-                savedEvents.add(Integer.parseInt(id));
-            }
+//            ArrayList<String> temp = new ArrayList<String>(eventSet);
+//
+//            for(String id: temp)
+//            {
+//                savedEvents.add(Integer.parseInt(id));
+//            }
         }
 
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
@@ -321,9 +328,9 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         //add things here. ArrayList needs to be converted to a set to be saved,
         //and converted back to be called
 
-        for(int i = 0; i < savedEvents.size(); i++)
+        for(Integer event: savedEvents)
         {
-            eventSet.add(Integer.toString(savedEvents.get(i)));
+            eventSet.add(Integer.toString(event));
         }
 
         //points, isloggedin,
