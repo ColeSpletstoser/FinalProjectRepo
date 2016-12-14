@@ -72,14 +72,17 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 
-        isLoggedIn = settings.getBoolean("isLoggedIn", false);
-        userPoints = settings.getInt("points", 0);
-        eventSet = settings.getStringSet("eventSet", null);
-        ArrayList<String> temp = new ArrayList<String>(eventSet);
-
-        for(String id: temp)
+        if(isLoggedIn)
         {
-            savedEvents.add(Integer.parseInt(id));
+            isLoggedIn = settings.getBoolean("isLoggedIn", false);
+            userPoints = settings.getInt("points", 0);
+            eventSet = settings.getStringSet("eventSet", null);
+            ArrayList<String> temp = new ArrayList<String>(eventSet);
+
+            for(String id: temp)
+            {
+                savedEvents.add(Integer.parseInt(id));
+            }
         }
 
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);

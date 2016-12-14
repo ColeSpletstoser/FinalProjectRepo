@@ -1,5 +1,6 @@
 package cs188.drakeactivities;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by Spletz on 11/15/16.
@@ -40,6 +42,9 @@ public class LogInFragment extends Fragment {
                 if(user.equals(fakeUser) && pass.equals(fakePass))
                 {
                     ((MainActivity)getActivity()).setLoggedIn(true);
+                    Context context= getActivity();
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(context, "setLogedIn true", duration);
                     FragmentTransaction trans = getFragmentManager()
                             .beginTransaction();
 
