@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         proj1.setEventYear(2016);
         proj1.setEventDescription("Come to the Knapp and support the Drake Men’s Basketball as they take on Iona!");
         proj1.setEventCode("SportsGoSports");
-        proj1.setEventIcon(R.drawable.drake_basketball);
+        proj1.setEventIcon(R.mipmap.bball);
         proj1.setLongitude(41.6036036);
         proj1.setLatitude(-93.6374793);
         proj1.setEventCode("DRAKE");
@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         proj2.setEventYear(2016);
         proj2.setEventDescription("Join us for a delicious Christmas dinner this Wednesday.");
         proj2.setEventCode("XmasYumYum");
-        proj2.setEventIcon(R.drawable.christmas_dinner);
+        proj2.setEventIcon(R.mipmap.dinner);
         proj2.setLongitude(41.6036036);
         proj2.setLatitude(-93.6374793);
         proj2.setEventCode("DRAKE");
@@ -178,7 +178,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         proj3.setEventYear(2016);
         proj3.setEventDescription("Come build your best snowman, and see how you fare against other students. President Martin will be there to judge the snowmen.");
         proj3.setEventCode("FrostyTheSnowBulldog");
-        proj3.setEventIcon(R.drawable.snowman_building);
+        proj3.setEventIcon(R.mipmap.snowman);
         proj3.setLongitude(41.6036036);
         proj3.setLatitude(-93.6374793);
         proj3.setEventCode("DRAKE");
@@ -192,7 +192,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         proj4.setEventYear(2016);
         proj4.setEventDescription("Bring your friends, phones, and nuts as we gather to watch the squirrel in its natural habitat! Hand feed at your own risk.");
         proj4.setEventCode("FriendsPhonesNuts");
-        proj4.setEventIcon(R.drawable.squirrel_watching);
+        proj4.setEventIcon(R.mipmap.squirrel);
         proj4.setLongitude(41.6036036);
         proj4.setLatitude(-93.6374793);
         proj4.setEventCode("DRAKE");
@@ -206,7 +206,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         proj5.setEventYear(2016);
         proj5.setEventDescription("Don’t have any plans on Valentines day? Are you forever alone? Then come to Upper Olmsted and join us as we try to match students through 2 minutes speed dates! Dress to impress.");
         proj5.setEventCode("Sad-N-Lonely");
-        proj5.setEventIcon(R.drawable.maxresdefault);
+        proj5.setEventIcon(R.mipmap.speeddate);
         proj5.setLongitude(41.6036036);
         proj5.setLatitude(-93.6374793);
         proj5.setEventCode("DRAKE");
@@ -220,7 +220,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         proj6.setEventYear(2017);
         proj6.setEventDescription("Come to blood mobile and donate your blood! – No vampires here.");
         proj6.setEventCode("TeamEdward");
-        proj6.setEventIcon(R.drawable.blooddrive);
+        proj6.setEventIcon(R.mipmap.blooddrive);
         proj6.setLongitude(41.6036036);
         proj6.setLatitude(-93.6374793);
         proj6.setEventCode("DRAKE");
