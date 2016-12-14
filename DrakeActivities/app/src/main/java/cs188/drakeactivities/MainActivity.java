@@ -73,24 +73,26 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 
-        if(!settings.contains("isLoggedIn"))
-        {
-            Toast.makeText(getApplicationContext(), "isNotLoggedIn", Toast.LENGTH_SHORT);
-        }
+//        if(!settings.contains("isLoggedIn"))
+//        {
+//            Toast.makeText(getApplicationContext(), "isNotLoggedIn", Toast.LENGTH_SHORT);
+//        }
 
-        if(settings.contains("isLoggedIn"))
-        {
-            Toast.makeText(getApplicationContext(), "isLoggedIn", Toast.LENGTH_SHORT);
-            isLoggedIn = settings.getBoolean("isLoggedIn", false);
-            userPoints = settings.getInt("points", 0);
-            eventSet = settings.getStringSet("eventSet", null);
-//            ArrayList<String> temp = new ArrayList<String>(eventSet);
+        //Returns NPE in the for each loop
+//        if(settings.contains("isLoggedIn"))
+//        {
+//           eventSet = new HashSet<String>();
+//            savedEvents = new ArrayList<Integer>();
+//            Toast.makeText(getApplicationContext(), "isLoggedIn", Toast.LENGTH_SHORT);
+//            isLoggedIn = settings.getBoolean("isLoggedIn", false);
+//            userPoints = settings.getInt("points", 0);
+//            eventSet = settings.getStringSet("eventSet", null);
 //
-//            for(String id: temp)
+//            for(String id: eventSet)
 //            {
 //                savedEvents.add(Integer.parseInt(id));
 //            }
-        }
+//        }
 
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         tabLayout.addTab(tabLayout.newTab().setText("Today"));
@@ -324,7 +326,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
         SharedPreferences.Editor editor = settings.edit();
-
+        eventSet = new HashSet<String>();
         //add things here. ArrayList needs to be converted to a set to be saved,
         //and converted back to be called
 
